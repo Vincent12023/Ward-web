@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support &amp; FAQ — Ward Rain&amp;Sun</title>
+  <meta name="description" content="Get help with your Ward Rain&Sun umbrella. Warranty claims, care tips, and frequently asked questions." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 3.5rem 1.5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .faq-section h2 {
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+      font-size: 1.6rem;
+    }
+    .faq-section .section-sub {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    .faq-category {
+      margin-bottom: 2.5rem;
+    }
+    .faq-category-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: var(--font-sans);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #E8E0D0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #EEE8DF;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.1rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-sans);
+      font-size: 0.97rem;
+      font-weight: 500;
+      color: var(--navy);
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--gold-dark); }
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      border: 1.5px solid #D8D0C4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s, transform 0.25s;
+    }
+    .faq-chevron svg { width: 9px; height: 9px; transition: transform 0.25s; }
+    .faq-item.open .faq-chevron {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+    .faq-item.open .faq-chevron svg { transform: rotate(180deg); }
+    .faq-item.open .faq-chevron svg path { stroke: var(--cream); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      padding: 0 0 1.25rem;
+    }
+    .faq-answer-inner p {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .faq-answer-inner a { color: var(--gold-dark); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Contact card ── */
+    .contact-section {
+      background: var(--navy);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+    .contact-section h2 { color: var(--cream); margin-bottom: 0.5rem; font-size: 1.5rem; }
+    .contact-section p { color: var(--slate-light); max-width: 360px; margin: 0 auto 2rem; font-size: 0.95rem; }
+
+    .contact-card {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2.5rem;
+    }
+    .contact-card .contact-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .contact-card a {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--cream);
+      font-family: var(--font-serif);
+    }
+    .contact-card .response-time {
+      font-size: 0.8rem;
+      color: var(--slate-light);
+      font-weight: 300;
+    }
+
+    /* ── Warranty CTA ── */
+    .register-cta {
+      background: var(--cream);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .register-cta h3 { color: var(--navy); font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .register-cta p { color: var(--text-mid); font-size: 0.9rem; margin-bottom: 1.25rem; }
+  </style>
+</head>
+<body>
+
+  <div class="gold-rule"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ward <span>Rain&amp;Sun</span></a>
+    <div class="nav-links">
+      <a href="support.html" class="nav-text" style="color:var(--gold)">Support</a>
+      <a href="warranty.html" class="btn nav-cta">Activate Warranty</a>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <div class="page-header">
+    <h1>Support &amp; FAQ</h1>
+    <p>Find answers fast — or reach us directly.</p>
+  </div>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <p class="section-sub">Can't find your answer? Email us at <a href="mailto:support@wardrainsun.com" style="color:var(--gold-dark)">support@wardrainsun.com</a></p>
+
+    <!-- Category: Warranty -->
+    <div class="faq-category">
+      <div class="faq-category-label">Warranty &amp; Registration</div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          What does the lifetime warranty cover?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Our lifetime warranty covers manufacturing defects and frame failures under normal use — including broken ribs, bent shafts, and canopy attachment failures. It does not cover accidental damage, loss, or extreme misuse (e.g. using the umbrella in hurricane-force winds).</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I activate my warranty?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Visit our <a href="warranty.html">warranty registration page</a>, fill in your name, email, Amazon Order ID, product model, and purchase date. It takes under a minute. You must register within 30 days of purchase.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          I missed the 30-day registration window. Can I still register?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Email us at <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a> with your Amazon order number and we'll review your case. We're flexible with customers who reach out in good faith.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          I didn't receive a confirmation email after registering.
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Check your spam or promotions folder first. If it's not there, email <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a> with your name and Amazon Order ID and we'll confirm your registration manually.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Category: Claims -->
+    <div class="faq-category">
+      <div class="faq-category-label">Warranty Claims &amp; Replacement</div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          My umbrella frame is bent or broken. What do I do?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Email <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a> with: (1) your registered email or Amazon Order ID, (2) a brief description of the issue, and (3) a photo of the damage. We'll arrange a free replacement — no need to send the old one back.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Do I need to return the defective umbrella?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>No. We don't require returns for warranty replacements. Once we've verified the issue, we ship your replacement directly. This keeps things simple for everyone.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does a replacement take to arrive?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Replacements are typically processed within 1–2 business days. Standard shipping from our fulfillment center usually arrives within 5–8 business days depending on your location.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Category: Product care -->
+    <div class="faq-category">
+      <div class="faq-category-label">Product Care &amp; Use</div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I care for my umbrella to make it last longer?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>After use in rain, open the umbrella fully and let it air-dry before storing — never store it wet or folded while damp, as this causes fabric and frame deterioration. Keep it away from prolonged direct sunlight when not in use. Avoid forcing the mechanism if it feels stiff; a light wipe with a dry cloth on the runner usually helps.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          The canopy fabric looks faded. Is that covered?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Minor fading over years of UV exposure is considered normal wear and is not covered by warranty. Significant early fading (within 6 months of normal use) may qualify — email us with a photo and we'll assess it.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          The auto-open button is stiff or not responding.
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Make sure the shaft is clean and dry — debris or moisture near the runner is the most common cause. If the button mechanism itself is faulty and the umbrella is registered under warranty, contact us for a replacement.</p>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- Category: Orders -->
+    <div class="faq-category">
+      <div class="faq-category-label">Orders &amp; Purchasing</div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Where can I buy Ward Rain&amp;Sun umbrellas?
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>Our umbrellas are currently available exclusively on <a href="https://www.amazon.com" target="_blank" rel="noopener">Amazon.com</a>. Search "Ward Rain Sun" to find our full range.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          I want to return or exchange my umbrella — not a warranty claim.
+          <span class="faq-chevron"><svg viewBox="0 0 9 6" fill="none"><path d="M1 1l3.5 4L8 1" stroke="#888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p>For standard returns and exchanges, please use Amazon's return system through Your Orders. Amazon's return policy applies for purchases made on their platform. If you've run into any issue, feel free to email us too — we always try to make things right.</p>
+        </div></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section class="contact-section">
+    <h2>Still need help?</h2>
+    <p>Our support team replies within 24 hours on business days.</p>
+    <div class="contact-card">
+      <span class="contact-label">Email Support</span>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+      <span class="response-time">Mon – Fri · Reply within 24 hours</span>
+    </div>
+  </section>
+
+  <!-- Register CTA -->
+  <section class="register-cta">
+    <h3>Haven't registered your warranty yet?</h3>
+    <p>Register within 30 days of purchase to activate lifetime coverage.</p>
+    <a href="warranty.html" class="btn btn-navy">Activate Warranty →</a>
+  </section>
+
+  <!-- Footer -->
+  <div class="gold-rule"></div>
+  <footer class="footer">
+    <div class="footer-logo">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="warranty.html">Warranty</a>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2025 Ward Rain&amp;Sun. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+        // Toggle clicked
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Fade-up on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warranty Activated! — Ward Rain&amp;Sun</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body { background: var(--cream); }
+
+    .success-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.75rem;
+      animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .success-icon svg { width: 32px; height: 32px; }
+
+    .success-badge {
+      display: inline-block;
+      background: rgba(12,35,64,0.08);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+
+    .success-page h1 {
+      color: var(--navy);
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .success-page .greeting {
+      color: var(--gold);
+    }
+
+    .success-page > p {
+      color: var(--text-mid);
+      max-width: 380px;
+      margin: 0 auto 2rem;
+    }
+
+    /* Confirmation box */
+    .confirm-box {
+      background: var(--white);
+      border: 1px solid #E8E0D0;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 1.75rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto 2.5rem;
+      text-align: left;
+    }
+    .confirm-box .confirm-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .confirm-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .confirm-dot {
+      width: 18px;
+      height: 18px;
+      background: #EAF3DE;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .confirm-dot svg { width: 9px; height: 9px; }
+    .confirm-text { font-size: 0.9rem; color: var(--text-mid); }
+    .confirm-email {
+      background: var(--cream);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      color: var(--navy);
+      font-weight: 500;
+      margin-top: 0.75rem;
+      word-break: break-all;
+    }
+
+    /* Next steps */
+    .next-steps {
+      max-width: 400px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .next-step-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      background: var(--white);
+      border: 1px solid #E8E0D0;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: border-color 0.2s, transform 0.15s;
+      text-align: left;
+    }
+    .next-step-btn:hover { border-color: var(--gold); transform: translateY(-1px); }
+    .step-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-icon svg { width: 18px; height: 18px; }
+    .step-text {}
+    .step-title { font-size: 0.92rem; font-weight: 500; color: var(--navy); display: block; }
+    .step-desc  { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 1px; }
+
+    .back-home {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .back-home:hover { color: var(--navy); border-bottom-color: var(--navy); }
+  </style>
+</head>
+<body>
+  <div class="gold-rule"></div>
+
+  <div class="success-page">
+
+    <div class="success-icon">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M7 16l6 6 12-12" stroke="#C9A96E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+
+    <div class="success-badge">Warranty Activated</div>
+    <h1>You're all set<span class="greeting" id="greeting-name"></span>!</h1>
+    <p>Your lifetime warranty is now active. Check your inbox — we've sent a confirmation and your umbrella care guide.</p>
+
+    <!-- Confirmation summary -->
+    <div class="confirm-box">
+      <div class="confirm-label">What's confirmed</div>
+      <div class="confirm-row">
+        <div class="confirm-dot">
+          <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#3B6D11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="confirm-text">Lifetime warranty activated on your umbrella</span>
+      </div>
+      <div class="confirm-row">
+        <div class="confirm-dot">
+          <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#3B6D11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span class="confirm-text">Confirmation email sent to:</span>
+      </div>
+      <div class="confirm-email" id="confirm-email">your registered email</div>
+    </div>
+
+    <!-- Next steps -->
+    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem; margin-top:0;">One more thing you can do:</p>
+    <div class="next-steps">
+
+      <!-- Leave a review -->
+      <a href="https://www.amazon.com/review/create-review/" target="_blank" rel="noopener" class="next-step-btn">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <div class="step-text">
+          <span class="step-title">Leave a review on Amazon</span>
+          <span class="step-desc">Takes 1 minute · Helps other buyers make a good choice</span>
+        </div>
+      </a>
+
+      <!-- Support -->
+      <a href="support.html" class="next-step-btn">
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+        </div>
+        <div class="step-text">
+          <span class="step-title">Browse our FAQ</span>
+          <span class="step-desc">Care tips, warranty details, and common questions</span>
+        </div>
+      </a>
+
+    </div>
+
+    <a href="index.html" class="back-home">← Back to home</a>
+  </div>
+
+  <script>
+    // Pull name and email from URL params set by the form
+    const params = new URLSearchParams(window.location.search);
+    const name  = params.get('name');
+    const email = params.get('email');
+    if (name) {
+      document.getElementById('greeting-name').textContent = ', ' + name;
+    }
+    if (email) {
+      document.getElementById('confirm-email').textContent = email;
+    }
+  </script>
+</body>
+</html>

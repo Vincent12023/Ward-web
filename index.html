@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ward Rain&amp;Sun — Premium Umbrellas</title>
+  <meta name="description" content="Ward Rain&Sun crafts premium umbrellas built to last. Register your warranty, get support, and explore our collection." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Hero ── */
+    .hero {
+      background: var(--navy);
+      padding: 5rem 1.5rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,169,110,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      color: var(--cream);
+      max-width: 560px;
+      margin: 0 auto 1rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      color: var(--slate-light);
+      font-size: 1.05rem;
+      font-weight: 300;
+      max-width: 420px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── Warranty Banner ── */
+    .warranty-banner {
+      background: var(--gold);
+      padding: 1rem 1.5rem;
+      text-align: center;
+    }
+    .warranty-banner p {
+      color: var(--navy);
+      font-weight: 500;
+      font-size: 0.92rem;
+    }
+    .warranty-banner a {
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Feature pillars ── */
+    .pillars {
+      background: var(--cream);
+      padding: 4rem 1.5rem;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: var(--max-w-wide);
+      margin: 0 auto;
+    }
+    .pillar {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      border: 1px solid #E8E0D0;
+    }
+    .pillar-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--navy);
+      border-radius: 50%;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pillar-icon svg { width: 22px; height: 22px; }
+    .pillar h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .pillar p  { font-size: 0.9rem; font-weight: 300; }
+
+    /* ── Warranty CTA band ── */
+    .warranty-cta {
+      background: var(--navy);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    .warranty-cta .badge {
+      display: inline-block;
+      background: rgba(201,169,110,0.15);
+      border: 1px solid rgba(201,169,110,0.4);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+    .warranty-cta h2 { color: var(--cream); margin-bottom: 0.75rem; }
+    .warranty-cta p { color: var(--slate-light); max-width: 400px; margin: 0 auto 2rem; }
+    .timer-note {
+      margin-top: 1.25rem;
+      font-size: 0.82rem;
+      color: var(--slate-light);
+    }
+
+    /* ── Brand story ── */
+    .brand-story {
+      padding: 4rem 1.5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .brand-story .divider-gold {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 1.5rem auto;
+    }
+    .brand-story h2 { color: var(--navy); margin-bottom: 0.5rem; }
+    .brand-story p { max-width: 520px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+
+  <!-- Gold top rule -->
+  <div class="gold-rule"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Ward <span>Rain&amp;Sun</span></a>
+    <div class="nav-links">
+      <a href="support.html" class="nav-text">Support</a>
+      <a href="warranty.html" class="btn nav-cta">Activate Warranty</a>
+    </div>
+  </nav>
+
+  <!-- Warranty reminder banner -->
+  <div class="warranty-banner">
+    <p>📦 Just received your umbrella? <a href="warranty.html">Activate your lifetime warranty →</a></p>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <span class="hero-eyebrow">Premium Umbrellas Since Day One</span>
+    <h1>Built to Last.<br /><em>Backed by Us.</em></h1>
+    <p class="hero-sub">Every Ward Rain&amp;Sun umbrella comes with a lifetime warranty — because we stand behind what we make.</p>
+    <div class="hero-btns">
+      <a href="warranty.html" class="btn btn-primary">Activate Warranty</a>
+      <a href="support.html" class="btn btn-secondary">Get Support</a>
+    </div>
+  </section>
+
+  <!-- Feature pillars -->
+  <section class="pillars">
+    <div class="pillars-grid">
+
+      <div class="pillar fade-up">
+        <div class="pillar-icon">
+          <!-- Shield icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L4 6v6c0 5 4 9 8 10 4-1 8-5 8-10V6L12 2z"/>
+          </svg>
+        </div>
+        <h3>Lifetime Warranty</h3>
+        <p>Frame defects covered for life. Register within 30 days to activate.</p>
+      </div>
+
+      <div class="pillar fade-up" style="transition-delay: 0.1s">
+        <div class="pillar-icon">
+          <!-- Rain drop icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2C8 8 5 12 5 15a7 7 0 0014 0c0-3-3-7-7-13z"/>
+          </svg>
+        </div>
+        <h3>Rain &amp; UV Protection</h3>
+        <p>Engineered for real weather — waterproof canopy and UPF 50+ sun blocking.</p>
+      </div>
+
+      <div class="pillar fade-up" style="transition-delay: 0.2s">
+        <div class="pillar-icon">
+          <!-- Star icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3>Premium Build</h3>
+        <p>Aircraft-grade aluminium ribs, fibreglass tips, and a reinforced double canopy.</p>
+      </div>
+
+      <div class="pillar fade-up" style="transition-delay: 0.3s">
+        <div class="pillar-icon">
+          <!-- Refresh icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+          </svg>
+        </div>
+        <h3>Free Replacement</h3>
+        <p>We ship a brand-new replacement directly. No returns. No hassle.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Warranty CTA -->
+  <section class="warranty-cta">
+    <div class="container">
+      <div class="badge">30-Day Registration Window</div>
+      <h2>Register Your Umbrella Today</h2>
+      <p>Takes less than a minute. Protects your purchase for a lifetime.</p>
+      <a href="warranty.html" class="btn btn-primary">Activate Lifetime Warranty →</a>
+      <p class="timer-note">⏱ Purchase date is required — register before your 30-day window closes.</p>
+    </div>
+  </section>
+
+  <!-- Brand story -->
+  <section class="brand-story fade-up">
+    <h2>Why Ward Rain&amp;Sun?</h2>
+    <div class="divider-gold"></div>
+    <p>We started with one question: why do umbrellas always fail at the worst moment? Every Ward Rain&amp;Sun umbrella is engineered to handle real storms — and backed with a warranty that means it. If it ever lets you down, we make it right.</p>
+  </section>
+
+  <!-- Footer -->
+  <div class="gold-rule"></div>
+  <footer class="footer">
+    <div class="footer-logo">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="warranty.html">Warranty</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2025 Ward Rain&amp;Sun. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Fade-up on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
