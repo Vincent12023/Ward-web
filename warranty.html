@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMWVTXSWFM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,6 +10,7 @@
 
   gtag('config', 'G-ZMWVTXSWFM');
 </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Activate Warranty — Ward Rain&amp;Sun</title>
@@ -200,17 +201,18 @@
       margin-top: 1rem;
     }
 
-    /* ── Tally embed alternative ── */
-    /* If using Tally.so, remove the #warranty-form block above
-       and uncomment the .tally-section block below.
-       Replace XXXXXXXX with your actual Tally form ID. */
-    /*
-    .tally-section {
-      padding: 2rem 1.5rem 3rem;
+    /* ── Google Forms embed wrapper ── */
+    .gform-section {
+      padding: 0 1.5rem 3rem;
       max-width: var(--max-w);
       margin: 0 auto;
     }
-    */
+    .gform-section iframe {
+      width: 100%;
+      border: none;
+      border-radius: var(--radius-lg);
+      display: block;
+    }
 
     /* ── How it works ── */
     .how-it-works {
@@ -306,95 +308,64 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       FORM SECTION
-       Option A (default): Custom HTML form
-       Option B: Replace with Tally embed — see comment below
-       ══════════════════════════════════════ -->
-  <div class="form-section">
-    <div class="form-card">
-      <h2>Your Information</h2>
-      <p class="form-sub">All fields are required. Your email is used only for warranty communications.</p>
+  <!-- ══════════════════════════════════════════════════════
+       FORM SECTION — Google Forms Embed
+       
+       如何设置（5分钟完成）：
+       
+       Step 1｜在 Google Forms 创建表单
+         前往 forms.google.com，新建表单，添加以下字段：
+           - First Name（短文本，必填）
+           - Last Name（短文本）
+           - Email Address（短文本，必填）
+           - Amazon Order ID（短文本，必填）
+           - Product Model（下拉选择，必填）
+           - Purchase Date（日期，必填）
+       
+       Step 2｜设置提交后确认语
+         表单设置 → 演示 → 确认消息，填写：
+         "Your lifetime warranty is now active! 🎉
+          Check your inbox for a confirmation email.
+          Questions? Email support@wardrainsun.com"
+       
+       Step 3｜获取嵌入代码
+         点击右上角「发送」→ 选择「<>」嵌入图标
+         复制 iframe 中的 src URL（格式如下）：
+         https://docs.google.com/forms/d/e/FORM_ID/viewform?embedded=true
+       
+       Step 4｜替换下方 YOUR_GOOGLE_FORM_ID
+         将完整 URL 粘贴到 iframe 的 src 属性中
+       
+       Step 5｜调整 iframe 高度
+         在 Google Forms 预览页面，实际滚动一下表单，
+         根据内容高度调整下方 height 值（默认 680，可改 600~900）
+       
+       ⚠️ 注意事项：
+         · Google Forms 嵌入后，提交成功会显示 Google 自带确认页，
+           无法自动跳转到我们的 warranty-success.html。
+           如需跳转，需配合 Google Apps Script（进阶，见 README）。
+         · 表单样式为 Google 原生，无法自定义字体/颜色。
+         · 数据自动保存至 Google Sheet，无需额外配置。
+       ══════════════════════════════════════════════════════ -->
 
-      <form id="warranty-form" novalidate>
+  <div class="gform-section">
+    <div class="form-card" style="padding: 0; overflow: hidden;">
 
-        <div class="field-row">
-          <div class="field-group">
-            <label for="first-name">First Name <span class="req">*</span></label>
-            <input type="text" id="first-name" name="first_name" placeholder="e.g. Sarah" autocomplete="given-name" required />
-          </div>
-          <div class="field-group">
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name" name="last_name" placeholder="e.g. Johnson" autocomplete="family-name" />
-          </div>
-        </div>
-
-        <div class="field-group">
-          <label for="email">Email Address <span class="req">*</span></label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
-          <p class="field-hint">We'll send your warranty confirmation and care guide here.</p>
-        </div>
-
-        <div class="field-group">
-          <label for="order-id">Amazon Order ID <span class="req">*</span></label>
-          <input type="text" id="order-id" name="order_id" placeholder="e.g. 114-1234567-8901234" autocomplete="off" required />
-          <p class="field-hint">Found in Your Orders → Order Details on Amazon.</p>
-        </div>
-
-        <div class="field-group">
-          <label for="product">Product Model <span class="req">*</span></label>
-          <div class="select-wrap">
-            <select id="product" name="product" required>
-              <option value="" disabled selected>Select your umbrella model</option>
-              <!-- ✏️ UPDATE: Add your actual product models here -->
-              <option value="compact-auto">Compact Auto-Open — Black</option>
-              <option value="compact-auto-navy">Compact Auto-Open — Navy</option>
-              <option value="golf-xl">Golf XL Windproof</option>
-              <option value="travel-uv">Travel UV Protection</option>
-              <option value="other">Other / Not Listed</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="field-group">
-          <label for="purchase-date">Purchase Date <span class="req">*</span></label>
-          <input type="date" id="purchase-date" name="purchase_date" required />
-          <p class="field-hint">Registration must be within 30 days of purchase.</p>
-        </div>
-
-        <button type="submit" class="submit-btn" id="submit-btn">
-          Activate My Warranty →
-        </button>
-
-        <p class="privacy-note">🔒 We never share your email. No spam — ever.</p>
-      </form>
-
-      <!--
-      ══════════════════════════════════════════
-      OPTION B — TALLY.SO EMBED
-      To use Tally instead of the HTML form above:
-      1. Delete the <form id="warranty-form"> block above
-      2. Create your form at tally.so
-      3. Click Share → Embed → copy the embed code
-      4. Paste it below and uncomment it
-
+      <!-- ✏️ 将下方 src 中的 YOUR_GOOGLE_FORM_ID 替换为你的表单 ID -->
       <iframe
-        data-tally-src="https://tally.so/embed/XXXXXXXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-        loading="lazy"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSc0Xr053Z8NrwTGLN26eaUaZT1t4K9zN21GeRCO-0QY2bHXCQ/viewform?embedded=true&hl=en"
         width="100%"
-        height="400"
+        height="680"
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        title="Warranty Registration"
-      ></iframe>
-      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        title="Warranty Registration — Ward Rain&Sun"
+        loading="lazy"
+        style="display:block; border-radius: var(--radius-lg);"
+      >
+        Loading form…
+      </iframe>
 
-      Also update the form submit redirect below — with Tally,
-      set the "redirect to URL" in Tally settings to:
-      https://wardrainsun.com/warranty-success.html
-      ══════════════════════════════════════════
-      -->
     </div>
   </div>
 
@@ -431,103 +402,6 @@
     <p>&copy; 2025 Ward Rain&amp;Sun. All rights reserved.</p>
   </footer>
 
-  <script>
-    // ── Form validation & submit ──
-    const form = document.getElementById('warranty-form');
-    const btn  = document.getElementById('submit-btn');
-
-    if (form) {
-      form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        // Basic validation
-        const required = form.querySelectorAll('[required]');
-        let valid = true;
-        required.forEach(field => {
-          field.style.borderColor = '';
-          if (!field.value.trim()) {
-            field.style.borderColor = '#E24B4A';
-            valid = false;
-          }
-        });
-        // Email format check
-        const emailField = document.getElementById('email');
-        if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
-          emailField.style.borderColor = '#E24B4A';
-          valid = false;
-        }
-        // 30-day window check
-        const dateField = document.getElementById('purchase-date');
-        if (dateField && dateField.value) {
-          const purchaseDate = new Date(dateField.value);
-          const today = new Date();
-          const diffDays = Math.floor((today - purchaseDate) / (1000 * 60 * 60 * 24));
-          if (diffDays > 30) {
-            dateField.style.borderColor = '#E24B4A';
-            dateField.nextElementSibling.textContent = '⚠️ Your 30-day registration window has closed. Contact us at support@wardrainsun.com for assistance.';
-            dateField.nextElementSibling.style.color = '#E24B4A';
-            valid = false;
-          }
-        }
-
-        if (!valid) return;
-
-        // Loading state
-        btn.textContent = 'Activating…';
-        btn.disabled = true;
-
-        // ══════════════════════════════════════════════
-        // FORM SUBMISSION — Choose ONE option:
-        //
-        // OPTION 1 (Formspree — free tier: 50 submissions/month):
-        //   a) Sign up at formspree.io
-        //   b) Create a new form, copy your endpoint
-        //   c) Replace the URL below with your endpoint
-        //
-        // OPTION 2 (Tally — use Option B embed above instead)
-        //
-        // OPTION 3 (Netlify Forms — if deploying to Netlify):
-        //   Add netlify attribute to <form> tag and remove this JS submit
-        // ══════════════════════════════════════════════
-
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ✏️ Replace this
-
-        const data = {
-          first_name:    document.getElementById('first-name').value,
-          last_name:     document.getElementById('last-name').value,
-          email:         document.getElementById('email').value,
-          order_id:      document.getElementById('order-id').value,
-          product:       document.getElementById('product').value,
-          purchase_date: document.getElementById('purchase-date').value,
-        };
-
-        try {
-          // If no real endpoint yet, skip fetch and redirect for testing
-          if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
-            // Development mode — skip submission, just redirect
-            window.location.href = 'warranty-success.html?name=' + encodeURIComponent(data.first_name) + '&email=' + encodeURIComponent(data.email);
-            return;
-          }
-
-          const res = await fetch(FORMSPREE_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data)
-          });
-
-          if (res.ok) {
-            window.location.href = 'warranty-success.html?name=' + encodeURIComponent(data.first_name) + '&email=' + encodeURIComponent(data.email);
-          } else {
-            throw new Error('Submission failed');
-          }
-        } catch {
-          btn.textContent = 'Something went wrong — please email support@wardrainsun.com';
-          btn.style.background = '#E24B4A';
-          btn.style.color = '#fff';
-          btn.disabled = false;
-        }
-      });
-    }
-  </script>
+  <!-- No JS needed — Google Forms handles submission natively -->
 </body>
 </html>
