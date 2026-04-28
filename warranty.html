@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMWVTXSWFM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,881 +10,524 @@
 
   gtag('config', 'G-ZMWVTXSWFM');
 </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activate Your Warranty — Ward Rain&amp;Sun</title>
-  <meta name="description" content="Register your Ward Rain&Sun umbrella for lifetime warranty coverage. Takes less than 1 minute." />
-  <meta name="robots" content="noindex" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
+  <title>Activate Warranty — Ward Rain&amp;Sun</title>
+  <meta name="description" content="Register your Ward Rain&Sun umbrella within 30 days to activate your lifetime warranty." />
+  <link rel="stylesheet" href="css/style.css" />
   <style>
-    /* ─── Reset & Variables ─────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --navy:   #0C2340;
-      --gold:   #C9A96E;
-      --gold-light: #DFC08A;
-      --cream:  #F5F0E8;
-      --slate:  #4A6080;
-      --slate-light: #6B82A0;
-      --white:  #FFFFFF;
-      --error:  #C0392B;
-      --error-bg: #FDF0EE;
-      --success: #2E7D5E;
-      --warning: #A0622A;
-      --warning-bg: #FDF6EE;
-      --radius: 10px;
-      --shadow: 0 4px 24px rgba(12,35,64,0.10);
-      --shadow-lg: 0 8px 40px rgba(12,35,64,0.16);
-      --transition: 0.22s ease;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--navy);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ─── Top Gold Line ─────────────────────────────────── */
-    .top-bar {
-      height: 3px;
-      background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 50%, var(--navy) 100%);
-    }
-
-    /* ─── Navigation ────────────────────────────────────── */
-    nav {
+    /* ── Minimal nav for this page (no distractions) ── */
+    .nav-minimal {
       background: var(--navy);
-      padding: 0 24px;
+      padding: 0 1.5rem;
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-
-    .nav-logo {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1.15rem;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: 0.04em;
+    .nav-minimal .nav-logo {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--cream);
     }
+    .nav-minimal .nav-logo span { color: var(--gold); }
 
-    .nav-logo span {
-      color: var(--gold);
-    }
-
-    /* ─── Hero Header ────────────────────────────────────── */
-    .hero {
+    /* ── Page hero ── */
+    .warranty-hero {
       background: var(--navy);
-      padding: 40px 24px 48px;
+      padding: 3rem 1.5rem 2.5rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 120%, rgba(201,169,110,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .warranty-hero .badge {
+      display: inline-block;
       background: rgba(201,169,110,0.15);
-      border: 1px solid rgba(201,169,110,0.35);
-      border-radius: 20px;
-      padding: 5px 14px;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      border: 1px solid rgba(201,169,110,0.4);
       color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      color: var(--white);
-      line-height: 1.25;
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-    }
-
-    .hero h1 em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .hero-sub {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
-      font-weight: 300;
-      letter-spacing: 0.02em;
-    }
-
-    /* ─── Progress Steps ────────────────────────────────── */
-    .steps {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0;
-      padding: 0 24px;
-      margin-top: 32px;
-    }
-
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 5px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step-circle {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       font-size: 0.75rem;
       font-weight: 500;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.5);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      transition: var(--transition);
-    }
-
-    .step.active .step-circle {
-      background: var(--gold);
-      color: var(--navy);
-      border-color: var(--gold);
-      font-weight: 700;
-    }
-
-    .step.done .step-circle {
-      background: rgba(201,169,110,0.2);
-      color: var(--gold);
-      border-color: rgba(201,169,110,0.4);
-    }
-
-    .step-label {
-      font-size: 0.65rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      white-space: nowrap;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 1rem;
     }
+    .warranty-hero h1 { color: var(--cream); font-size: clamp(1.7rem, 5vw, 2.4rem); }
+    .warranty-hero p { color: var(--slate-light); margin-top: 0.6rem; max-width: 420px; margin-left: auto; margin-right: auto; }
 
-    .step.active .step-label { color: var(--gold); }
-
-    .step-line {
-      flex: 1;
-      height: 1px;
-      background: rgba(255,255,255,0.12);
-      margin: 0 8px;
-      margin-bottom: 20px;
-      max-width: 60px;
+    /* ── Benefits strip ── */
+    .benefits-strip {
+      background: var(--cream);
+      padding: 1.5rem;
+      border-bottom: 1px solid #E8E0D0;
     }
-
-    /* ─── Main Card ─────────────────────────────────────── */
-    .main {
-      max-width: 540px;
+    .benefits-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: var(--max-w);
       margin: 0 auto;
-      padding: 0 16px 60px;
     }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text-mid);
+    }
+    .benefit-check {
+      width: 20px;
+      height: 20px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .benefit-check svg { width: 10px; height: 10px; }
 
-    .card {
+    /* ── Form wrapper ── */
+    .form-section {
+      padding: 3rem 1.5rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .form-card {
       background: var(--white);
-      border-radius: 16px;
-      box-shadow: var(--shadow-lg);
-      margin-top: -20px;
-      padding: 32px 28px;
-      position: relative;
+      border: 1px solid #E8E0D0;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+    }
+    @media (max-width: 480px) {
+      .form-card { padding: 1.5rem 1.25rem; }
+    }
+    .form-card h2 {
+      color: var(--navy);
+      font-size: 1.3rem;
+      margin-bottom: 0.35rem;
+    }
+    .form-card .form-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
     }
 
-    /* ─── Trust Strip ────────────────────────────────────── */
-    .trust-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(12,35,64,0.07);
-      margin-bottom: 28px;
-      gap: 4px;
-    }
-
-    .trust-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      flex: 1;
-    }
-
-    .trust-icon {
-      font-size: 1.1rem;
-    }
-
-    .trust-text {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--slate);
-      text-align: center;
-      letter-spacing: 0.02em;
-      line-height: 1.3;
-    }
-
-    .trust-divider {
-      width: 1px;
-      height: 28px;
-      background: rgba(12,35,64,0.08);
-    }
-
-    /* ─── Form Styles ────────────────────────────────────── */
-    .form-section-title {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate-light);
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed rgba(12,35,64,0.08);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    label {
+    /* ── Form fields ── */
+    .field-group { margin-bottom: 1.25rem; }
+    .field-group label {
       display: block;
-      font-size: 0.78rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: var(--navy);
-      margin-bottom: 6px;
-      letter-spacing: 0.01em;
+      margin-bottom: 0.4rem;
     }
-
-    label .req {
-      color: var(--gold);
-      margin-left: 2px;
-    }
-
-    label .opt {
-      color: var(--slate-light);
-      font-weight: 300;
-      font-size: 0.72rem;
-      margin-left: 4px;
-    }
-
-    input, select {
+    .field-group label .req { color: var(--gold); margin-left: 2px; }
+    .field-group input,
+    .field-group select {
       width: 100%;
       height: 46px;
       padding: 0 14px;
-      border: 1.5px solid rgba(12,35,64,0.15);
-      border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-dark);
       background: var(--white);
+      border: 1.5px solid #D8D0C4;
+      border-radius: var(--radius-sm);
       outline: none;
-      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+      transition: border-color 0.2s;
       -webkit-appearance: none;
       appearance: none;
     }
-
-    input::placeholder { color: rgba(74,96,128,0.4); }
-
-    input:focus, select:focus {
+    .field-group input::placeholder { color: #AAAAAA; }
+    .field-group input:focus,
+    .field-group select:focus {
       border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201,169,110,0.18);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.12);
     }
-
-    input.error, select.error {
-      border-color: var(--error);
-      background: var(--error-bg);
-    }
-
-    input.error:focus, select.error:focus {
-      box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
-    }
-
-    input.valid {
-      border-color: var(--success);
-    }
-
-    /* Custom select arrow */
-    .select-wrapper {
-      position: relative;
-    }
-
-    .select-wrapper::after {
+    .select-wrap { position: relative; }
+    .select-wrap::after {
       content: '';
+      pointer-events: none;
       position: absolute;
       right: 14px;
       top: 50%;
       transform: translateY(-50%);
-      width: 0;
-      height: 0;
-      border-left: 5px solid transparent;
-      border-right: 5px solid transparent;
-      border-top: 6px solid var(--slate);
-      pointer-events: none;
+      border: 5px solid transparent;
+      border-top-color: var(--slate);
     }
-
-    .select-wrapper select { padding-right: 36px; cursor: pointer; }
-
-    /* Field error message */
-    .field-error {
-      font-size: 0.72rem;
-      color: var(--error);
-      margin-top: 5px;
-      display: none;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .field-error.visible { display: flex; }
-
-    /* ─── Warning Banner (30-day) ────────────────────────── */
-    .date-warning {
-      display: none;
-      background: var(--warning-bg);
-      border: 1px solid rgba(160,98,42,0.25);
-      border-radius: var(--radius);
-      padding: 12px 14px;
-      margin-top: 8px;
+    .field-hint {
       font-size: 0.78rem;
-      color: var(--warning);
-      line-height: 1.5;
+      color: var(--text-muted);
+      margin-top: 0.3rem;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    @media (max-width: 420px) {
+      .field-row { grid-template-columns: 1fr; }
     }
 
-    .date-warning.visible { display: block; }
-
-    .date-warning strong { font-weight: 500; }
-
-    /* ─── Divider ─────────────────────────────────────────── */
-    .form-divider {
-      height: 1px;
-      background: rgba(12,35,64,0.07);
-      margin: 20px 0 24px;
-    }
-
-    /* ─── Submit Button ───────────────────────────────────── */
-    .btn-submit {
+    /* ── Submit button ── */
+    .submit-btn {
       width: 100%;
       height: 52px;
-      background: var(--navy);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-submit::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, transparent 0%, rgba(201,169,110,0.08) 100%);
-    }
-
-    .btn-submit:hover:not(:disabled) {
-      background: #0e2b50;
-      box-shadow: 0 6px 20px rgba(12,35,64,0.3);
-      transform: translateY(-1px);
-    }
-
-    .btn-submit:active:not(:disabled) {
-      transform: translateY(0);
-    }
-
-    .btn-submit:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .btn-arrow {
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--font-sans);
       font-size: 1rem;
-      transition: transform var(--transition);
+      font-weight: 500;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+    .submit-btn:hover { background: var(--gold-dark); transform: translateY(-1px); }
+    .submit-btn:active { transform: translateY(0); }
+
+    .privacy-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
     }
 
-    .btn-submit:hover:not(:disabled) .btn-arrow {
-      transform: translateX(4px);
+    /* ── Tally embed alternative ── */
+    /* If using Tally.so, remove the #warranty-form block above
+       and uncomment the .tally-section block below.
+       Replace XXXXXXXX with your actual Tally form ID. */
+    /*
+    .tally-section {
+      padding: 2rem 1.5rem 3rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
     }
+    */
 
-    /* Loading spinner */
-    .spinner {
-      display: none;
-      width: 18px;
-      height: 18px;
-      border: 2px solid rgba(255,255,255,0.3);
-      border-top-color: #fff;
+    /* ── How it works ── */
+    .how-it-works {
+      background: var(--cream);
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+    .how-it-works h3 {
+      color: var(--navy);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-family: var(--font-sans);
+      margin-bottom: 1.75rem;
+    }
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .step {
+      flex: 1;
+      min-width: 130px;
+      max-width: 160px;
+      text-align: center;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 600;
       border-radius: 50%;
-      animation: spin 0.7s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .btn-submit.loading .spinner { display: block; }
-    .btn-submit.loading .btn-text,
-    .btn-submit.loading .btn-arrow { display: none; }
-
-    /* ─── Submit Error Message ────────────────────────────── */
-    .submit-error {
-      display: none;
-      background: var(--error-bg);
-      border: 1px solid rgba(192,57,43,0.2);
-      border-radius: var(--radius);
-      padding: 12px 16px;
-      margin-top: 14px;
-      font-size: 0.82rem;
-      color: var(--error);
-      text-align: center;
-      line-height: 1.5;
-    }
-
-    .submit-error.visible { display: block; }
-
-    /* ─── Footer Note ─────────────────────────────────────── */
-    .form-footer {
-      margin-top: 16px;
-      text-align: center;
-      font-size: 0.72rem;
-      color: var(--slate-light);
-      line-height: 1.6;
-    }
-
-    .form-footer a {
-      color: var(--slate);
-      text-decoration: underline;
-      text-decoration-color: rgba(74,96,128,0.3);
-    }
-
-    /* ─── Security Note ───────────────────────────────────── */
-    .security-note {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      margin-top: 14px;
-      font-size: 0.7rem;
-      color: var(--slate-light);
+      margin: 0 auto 0.6rem;
     }
-
-    /* ─── Page Footer ─────────────────────────────────────── */
-    .page-footer {
-      text-align: center;
-      padding: 0 24px 40px;
-      font-size: 0.72rem;
-      color: var(--slate-light);
+    .step p { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; }
+    .step-arrow {
+      display: flex;
+      align-items: center;
+      padding-top: 10px;
+      color: var(--gold);
+      font-size: 1.2rem;
     }
-
-    .page-footer a {
-      color: var(--slate);
-      text-decoration: none;
-    }
-
-    /* ─── Responsive ──────────────────────────────────────── */
-    @media (max-width: 400px) {
-      .form-row { grid-template-columns: 1fr; }
-      .card { padding: 24px 18px; }
-      .trust-text { font-size: 0.6rem; }
-    }
+    @media (max-width: 420px) { .step-arrow { display: none; } }
   </style>
 </head>
 <body>
 
-  <!-- Top Gold Line -->
-  <div class="top-bar"></div>
+  <div class="gold-rule"></div>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="/" class="nav-logo">Ward Rain<span>&amp;</span>Sun</a>
+  <!-- Minimal nav — no distracting links -->
+  <nav class="nav-minimal">
+    <a href="index.html" class="nav-logo">Ward <span>Rain&amp;Sun</span></a>
   </nav>
 
-  <!-- Hero Header -->
-  <div class="hero">
-    <div class="hero-badge">Warranty Registration</div>
-    <h1>Activate Your<br><em>Lifetime Warranty</em></h1>
-    <p class="hero-sub">Register within 30 days &nbsp;·&nbsp; Takes under 1 minute</p>
+  <!-- Hero -->
+  <div class="warranty-hero">
+    <div class="badge">Lifetime Warranty Registration</div>
+    <h1>Activate Your Warranty</h1>
+    <p>Fill in the short form below. Takes less than a minute.</p>
+  </div>
 
-    <!-- Progress Steps -->
-    <div class="steps">
-      <div class="step active">
-        <div class="step-circle">1</div>
-        <div class="step-label">Register</div>
+  <!-- Benefits strip -->
+  <div class="benefits-strip">
+    <div class="benefits-list">
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Lifetime frame coverage</span>
       </div>
-      <div class="step-line"></div>
-      <div class="step">
-        <div class="step-circle">2</div>
-        <div class="step-label">Confirm</div>
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Free replacement, no returns</span>
       </div>
-      <div class="step-line"></div>
-      <div class="step">
-        <div class="step-circle">✓</div>
-        <div class="step-label">Protected</div>
+      <div class="benefit-item">
+        <div class="benefit-check">
+          <svg viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>Member-only offers &amp; discounts</span>
       </div>
     </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="main">
-    <div class="card">
+  <!-- ══════════════════════════════════════
+       FORM SECTION
+       Option A (default): Custom HTML form
+       Option B: Replace with Tally embed — see comment below
+       ══════════════════════════════════════ -->
+  <div class="form-section">
+    <div class="form-card">
+      <h2>Your Information</h2>
+      <p class="form-sub">All fields are required. Your email is used only for warranty communications.</p>
 
-      <!-- Trust Strip -->
-      <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-icon">🛡️</div>
-          <div class="trust-text">Lifetime<br>Warranty</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">📦</div>
-          <div class="trust-text">Free<br>Replacement</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">⚡</div>
-          <div class="trust-text">Instant<br>Activation</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">🔒</div>
-          <div class="trust-text">Private &amp;<br>Secure</div>
-        </div>
-      </div>
+      <form id="warranty-form" novalidate>
 
-      <!-- Form -->
-      <form id="warrantyForm" novalidate>
-
-        <!-- Personal Info -->
-        <div class="form-section-title">Your Information</div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name <span class="req">*</span></label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              placeholder="Jane"
-              autocomplete="given-name"
-              required
-            />
-            <div class="field-error" id="firstNameError">⚠ Please enter your first name.</div>
+        <div class="field-row">
+          <div class="field-group">
+            <label for="first-name">First Name <span class="req">*</span></label>
+            <input type="text" id="first-name" name="first_name" placeholder="e.g. Sarah" autocomplete="given-name" required />
           </div>
-
-          <div class="form-group">
-            <label for="lastName">Last Name <span class="opt">(optional)</span></label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Smith"
-              autocomplete="family-name"
-            />
+          <div class="field-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last_name" placeholder="e.g. Johnson" autocomplete="family-name" />
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="field-group">
           <label for="email">Email Address <span class="req">*</span></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="jane@example.com"
-            autocomplete="email"
-            inputmode="email"
-            required
-          />
-          <div class="field-error" id="emailError">⚠ Please enter a valid email address.</div>
+          <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+          <p class="field-hint">We'll send your warranty confirmation and care guide here.</p>
         </div>
 
-        <div class="form-divider"></div>
-
-        <!-- Order Info -->
-        <div class="form-section-title">Order Details</div>
-
-        <div class="form-group">
-          <label for="orderId">Amazon Order ID <span class="req">*</span></label>
-          <input
-            type="text"
-            id="orderId"
-            name="orderId"
-            placeholder="e.g. 114-1234567-8901234"
-            autocomplete="off"
-            required
-          />
-          <div class="field-error" id="orderIdError">⚠ Please enter your Amazon Order ID.</div>
+        <div class="field-group">
+          <label for="order-id">Amazon Order ID <span class="req">*</span></label>
+          <input type="text" id="order-id" name="order_id" placeholder="e.g. 114-1234567-8901234" autocomplete="off" required />
+          <p class="field-hint">Found in Your Orders → Order Details on Amazon.</p>
         </div>
 
-        <div class="form-group">
-          <label for="productModel">Product Model <span class="req">*</span></label>
-          <div class="select-wrapper">
-            <select id="productModel" name="productModel" required>
-              <option value="" disabled selected>— Select your model —</option>
-              <!-- ✏️ UPDATE: Replace with your actual product models -->
-              <option value="WRS-AUTO-01">WRS Classic Auto-Open</option>
-              <option value="WRS-COMPACT-01">WRS Compact Travel</option>
-              <option value="WRS-GOLF-01">WRS Golf XL</option>
-              <option value="WRS-WINDPROOF-01">WRS Windproof Pro</option>
-              <option value="WRS-UV-01">WRS UV Shield</option>
-              <option value="OTHER">Other / Not Listed</option>
+        <div class="field-group">
+          <label for="product">Product Model <span class="req">*</span></label>
+          <div class="select-wrap">
+            <select id="product" name="product" required>
+              <option value="" disabled selected>Select your umbrella model</option>
+              <!-- ✏️ UPDATE: Add your actual product models here -->
+              <option value="compact-auto">Compact Auto-Open — Black</option>
+              <option value="compact-auto-navy">Compact Auto-Open — Navy</option>
+              <option value="golf-xl">Golf XL Windproof</option>
+              <option value="travel-uv">Travel UV Protection</option>
+              <option value="other">Other / Not Listed</option>
             </select>
           </div>
-          <div class="field-error" id="productModelError">⚠ Please select your product model.</div>
         </div>
 
-        <div class="form-group">
-          <label for="purchaseDate">Purchase Date <span class="req">*</span></label>
-          <input
-            type="date"
-            id="purchaseDate"
-            name="purchaseDate"
-            required
-          />
-          <div class="field-error" id="purchaseDateError">⚠ Please select your purchase date.</div>
-
-          <!-- 30-day warning -->
-          <div class="date-warning" id="dateWarning">
-            <strong>⚠ Your purchase was more than 30 days ago.</strong><br>
-            Warranty registration may be limited. Please contact us at
-            <a href="mailto:support@wardrainsun.com" style="color:var(--warning);">support@wardrainsun.com</a>
-            and we'll do our best to help.
-          </div>
+        <div class="field-group">
+          <label for="purchase-date">Purchase Date <span class="req">*</span></label>
+          <input type="date" id="purchase-date" name="purchase_date" required />
+          <p class="field-hint">Registration must be within 30 days of purchase.</p>
         </div>
 
-        <!-- Submit -->
-        <button type="submit" class="btn-submit" id="submitBtn">
-          <div class="spinner"></div>
-          <span class="btn-text">Activate My Warranty</span>
-          <span class="btn-arrow">→</span>
+        <button type="submit" class="submit-btn" id="submit-btn">
+          Activate My Warranty →
         </button>
 
-        <!-- Submit Error -->
-        <div class="submit-error" id="submitError">
-          Something went wrong. Please try again or email us at
-          <a href="mailto:support@wardrainsun.com" style="color:var(--error);">support@wardrainsun.com</a>.
-        </div>
-
-        <!-- Footer -->
-        <div class="form-footer">
-          By submitting, you agree to our
-          <a href="/support">Terms &amp; Privacy Policy</a>.
-          We'll never sell your data or send spam.
-        </div>
-
-        <div class="security-note">
-          🔒 Secured &nbsp;·&nbsp; SSL encrypted &nbsp;·&nbsp; Data protected
-        </div>
-
+        <p class="privacy-note">🔒 We never share your email. No spam — ever.</p>
       </form>
-    </div><!-- /card -->
-  </div><!-- /main -->
 
-  <!-- Page Footer -->
-  <div class="page-footer">
-    <p>Questions? <a href="/support">Visit our Support page</a> or email <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a></p>
-    <p style="margin-top:6px;">&copy; 2025 Ward Rain&amp;Sun. All rights reserved.</p>
+      <!--
+      ══════════════════════════════════════════
+      OPTION B — TALLY.SO EMBED
+      To use Tally instead of the HTML form above:
+      1. Delete the <form id="warranty-form"> block above
+      2. Create your form at tally.so
+      3. Click Share → Embed → copy the embed code
+      4. Paste it below and uncomment it
+
+      <iframe
+        data-tally-src="https://tally.so/embed/XXXXXXXX?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+        loading="lazy"
+        width="100%"
+        height="400"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Warranty Registration"
+      ></iframe>
+      <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+      Also update the form submit redirect below — with Tally,
+      set the "redirect to URL" in Tally settings to:
+      https://wardrainsun.com/warranty-success.html
+      ══════════════════════════════════════════
+      -->
+    </div>
   </div>
 
-  <!-- ─── JavaScript ───────────────────────────────────────── -->
+  <!-- How it works -->
+  <div class="how-it-works">
+    <h3>What happens next</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Submit this form</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Get confirmation + care guide by email</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Lifetime warranty is active</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="gold-rule"></div>
+  <footer class="footer">
+    <div class="footer-logo">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2025 Ward Rain&amp;Sun. All rights reserved.</p>
+  </footer>
+
   <script>
-    // ✏️ UPDATE: Replace with your actual N8N Webhook URL
-    const N8N_WEBHOOK_URL = 'https://YOUR-N8N-INSTANCE.app.n8n.cloud/webhook/warranty-registration';
+    // ── Form validation & submit ──
+    const form = document.getElementById('warranty-form');
+    const btn  = document.getElementById('submit-btn');
 
-    // ─── Date Constraints ───────────────────────────────────
-    const dateInput = document.getElementById('purchaseDate');
-    const today = new Date();
-    const maxDate = today.toISOString().split('T')[0];
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-    // Min date: 2 years ago (reasonable lower bound)
-    const minDate = new Date(today);
-    minDate.setFullYear(minDate.getFullYear() - 2);
-    dateInput.max = maxDate;
-    dateInput.min = minDate.toISOString().split('T')[0];
-
-    // ─── 30-Day Warning ─────────────────────────────────────
-    dateInput.addEventListener('change', () => {
-      const warning = document.getElementById('dateWarning');
-      if (!dateInput.value) { warning.classList.remove('visible'); return; }
-
-      const purchased = new Date(dateInput.value);
-      const diffDays = Math.floor((today - purchased) / (1000 * 60 * 60 * 24));
-      warning.classList.toggle('visible', diffDays > 30);
-    });
-
-    // ─── Field Validation ────────────────────────────────────
-    function validateField(id, condition, errorId) {
-      const el = document.getElementById(id);
-      const err = document.getElementById(errorId);
-      if (!condition) {
-        el.classList.add('error');
-        el.classList.remove('valid');
-        err.classList.add('visible');
-        return false;
-      } else {
-        el.classList.remove('error');
-        el.classList.add('valid');
-        err.classList.remove('visible');
-        return true;
-      }
-    }
-
-    function isValidEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    // Live validation on blur
-    document.getElementById('firstName').addEventListener('blur', () => {
-      const v = document.getElementById('firstName').value.trim();
-      validateField('firstName', v.length > 0, 'firstNameError');
-    });
-
-    document.getElementById('email').addEventListener('blur', () => {
-      const v = document.getElementById('email').value.trim();
-      validateField('email', isValidEmail(v), 'emailError');
-    });
-
-    document.getElementById('orderId').addEventListener('blur', () => {
-      const v = document.getElementById('orderId').value.trim();
-      validateField('orderId', v.length > 0, 'orderIdError');
-    });
-
-    document.getElementById('productModel').addEventListener('change', () => {
-      const v = document.getElementById('productModel').value;
-      validateField('productModel', v !== '', 'productModelError');
-    });
-
-    document.getElementById('purchaseDate').addEventListener('change', () => {
-      const v = document.getElementById('purchaseDate').value;
-      validateField('purchaseDate', v !== '', 'purchaseDateError');
-    });
-
-    // ─── Form Submit ────────────────────────────────────────
-    document.getElementById('warrantyForm').addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const firstName    = document.getElementById('firstName').value.trim();
-      const lastName     = document.getElementById('lastName').value.trim();
-      const email        = document.getElementById('email').value.trim();
-      const orderId      = document.getElementById('orderId').value.trim();
-      const productModel = document.getElementById('productModel').value;
-      const purchaseDate = document.getElementById('purchaseDate').value;
-
-      // Full validation
-      let valid = true;
-      if (!validateField('firstName', firstName.length > 0, 'firstNameError')) valid = false;
-      if (!validateField('email', isValidEmail(email), 'emailError')) valid = false;
-      if (!validateField('orderId', orderId.length > 0, 'orderIdError')) valid = false;
-      if (!validateField('productModel', productModel !== '', 'productModelError')) valid = false;
-      if (!validateField('purchaseDate', purchaseDate !== '', 'purchaseDateError')) valid = false;
-
-      if (!valid) {
-        // Scroll to first error
-        document.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
-      }
-
-      // Loading state
-      const btn = document.getElementById('submitBtn');
-      const submitError = document.getElementById('submitError');
-      btn.classList.add('loading');
-      btn.disabled = true;
-      submitError.classList.remove('visible');
-
-      const payload = {
-        firstName,
-        lastName,
-        email,
-        orderId,
-        productModel,
-        purchaseDate,
-        submittedAt: new Date().toISOString(),
-        source: 'warranty-form',
-        userAgent: navigator.userAgent
-      };
-
-      try {
-        const res = await fetch(N8N_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
+        // Basic validation
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(field => {
+          field.style.borderColor = '';
+          if (!field.value.trim()) {
+            field.style.borderColor = '#E24B4A';
+            valid = false;
+          }
         });
+        // Email format check
+        const emailField = document.getElementById('email');
+        if (emailField && emailField.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value)) {
+          emailField.style.borderColor = '#E24B4A';
+          valid = false;
+        }
+        // 30-day window check
+        const dateField = document.getElementById('purchase-date');
+        if (dateField && dateField.value) {
+          const purchaseDate = new Date(dateField.value);
+          const today = new Date();
+          const diffDays = Math.floor((today - purchaseDate) / (1000 * 60 * 60 * 24));
+          if (diffDays > 30) {
+            dateField.style.borderColor = '#E24B4A';
+            dateField.nextElementSibling.textContent = '⚠️ Your 30-day registration window has closed. Contact us at support@wardrainsun.com for assistance.';
+            dateField.nextElementSibling.style.color = '#E24B4A';
+            valid = false;
+          }
+        }
 
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        if (!valid) return;
 
-        // Success → redirect with personalisation params
-        const params = new URLSearchParams({
-          name: firstName,
-          email: email
-        });
-        window.location.href = `/warranty-success?${params.toString()}`;
+        // Loading state
+        btn.textContent = 'Activating…';
+        btn.disabled = true;
 
-      } catch (err) {
-        console.error('Submission error:', err);
-        btn.classList.remove('loading');
-        btn.disabled = false;
-        submitError.classList.add('visible');
-        submitError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
+        // ══════════════════════════════════════════════
+        // FORM SUBMISSION — Choose ONE option:
+        //
+        // OPTION 1 (Formspree — free tier: 50 submissions/month):
+        //   a) Sign up at formspree.io
+        //   b) Create a new form, copy your endpoint
+        //   c) Replace the URL below with your endpoint
+        //
+        // OPTION 2 (Tally — use Option B embed above instead)
+        //
+        // OPTION 3 (Netlify Forms — if deploying to Netlify):
+        //   Add netlify attribute to <form> tag and remove this JS submit
+        // ══════════════════════════════════════════════
+
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID'; // ✏️ Replace this
+
+        const data = {
+          first_name:    document.getElementById('first-name').value,
+          last_name:     document.getElementById('last-name').value,
+          email:         document.getElementById('email').value,
+          order_id:      document.getElementById('order-id').value,
+          product:       document.getElementById('product').value,
+          purchase_date: document.getElementById('purchase-date').value,
+        };
+
+        try {
+          // If no real endpoint yet, skip fetch and redirect for testing
+          if (FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID')) {
+            // Development mode — skip submission, just redirect
+            window.location.href = 'warranty-success.html?name=' + encodeURIComponent(data.first_name) + '&email=' + encodeURIComponent(data.email);
+            return;
+          }
+
+          const res = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          if (res.ok) {
+            window.location.href = 'warranty-success.html?name=' + encodeURIComponent(data.first_name) + '&email=' + encodeURIComponent(data.email);
+          } else {
+            throw new Error('Submission failed');
+          }
+        } catch {
+          btn.textContent = 'Something went wrong — please email support@wardrainsun.com';
+          btn.style.background = '#E24B4A';
+          btn.style.color = '#fff';
+          btn.disabled = false;
+        }
+      });
+    }
   </script>
-
 </body>
 </html>
