@@ -539,70 +539,6 @@
       text-decoration: none;
     }
 
-    /* ─── Photo Upload ───────────────────────────────────── */
-    .upload-area {
-      border: 2px dashed rgba(12,35,64,0.2);
-      border-radius: var(--radius);
-      padding: 20px 16px;
-      text-align: center;
-      cursor: pointer;
-      transition: border-color var(--transition), background var(--transition);
-      position: relative;
-      background: rgba(245,240,232,0.5);
-    }
-
-    .upload-area:hover { border-color: var(--gold); background: rgba(201,169,110,0.04); }
-    .upload-area.drag-over { border-color: var(--gold); background: rgba(201,169,110,0.08); }
-    .upload-area.has-file { border-color: var(--success); border-style: solid; background: rgba(46,125,94,0.04); }
-    .upload-area.error-state { border-color: var(--error); background: var(--error-bg); }
-
-    .upload-area input[type="file"] {
-      position: absolute; inset: 0; opacity: 0; cursor: pointer;
-      width: 100%; height: 100%; border: none; background: none;
-    }
-
-    .upload-icon { font-size: 1.8rem; margin-bottom: 6px; display: block; }
-
-    .upload-label {
-      font-size: 0.82rem; font-weight: 500; color: var(--navy);
-      display: block; margin-bottom: 4px;
-    }
-
-    .upload-hint {
-      font-size: 0.72rem; color: var(--slate-light);
-    }
-
-    .upload-preview {
-      display: none;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 14px;
-      background: var(--white);
-      border: 1.5px solid rgba(46,125,94,0.3);
-      border-radius: var(--radius);
-      margin-top: 10px;
-    }
-
-    .upload-preview.visible { display: flex; }
-
-    .upload-thumb {
-      width: 52px; height: 52px; object-fit: cover;
-      border-radius: 6px; flex-shrink: 0;
-      border: 1px solid rgba(12,35,64,0.1);
-    }
-
-    .upload-info { flex: 1; min-width: 0; text-align: left; }
-    .upload-filename { font-size: 0.8rem; font-weight: 500; color: var(--navy); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .upload-filesize { font-size: 0.7rem; color: var(--slate-light); margin-top: 2px; }
-
-    .upload-remove {
-      background: none; border: none; cursor: pointer;
-      color: var(--slate-light); font-size: 1.1rem; padding: 4px;
-      flex-shrink: 0; line-height: 1;
-      transition: color var(--transition);
-    }
-    .upload-remove:hover { color: var(--error); }
-
     /* ─── Responsive ──────────────────────────────────────── */
     @media (max-width: 400px) {
       .form-row { grid-template-columns: 1fr; }
@@ -773,26 +709,6 @@
           </div>
         </div>
 
-        <!-- Photo Upload -->
-        <div class="form-group" id="photoGroup">
-          <label>Product Photo <span class="req">*</span></label>
-          <div class="upload-area" id="uploadArea">
-            <input type="file" id="photoFile" name="photoFile" accept="image/*" />
-            <span class="upload-icon">📷</span>
-            <span class="upload-label">Tap to take / upload a photo</span>
-            <span class="upload-hint">Clear photo of your umbrella · JPEG or PNG · Auto-compressed</span>
-          </div>
-          <div class="upload-preview" id="uploadPreview">
-            <img class="upload-thumb" id="uploadThumb" src="" alt="Preview" />
-            <div class="upload-info">
-              <div class="upload-filename" id="uploadFilename"></div>
-              <div class="upload-filesize" id="uploadFilesize"></div>
-            </div>
-            <button type="button" class="upload-remove" id="uploadRemove" title="Remove photo">✕</button>
-          </div>
-          <div class="field-error" id="photoError">⚠ Please upload a photo of your product.</div>
-        </div>
-
         <!-- Submit -->
         <button type="submit" class="btn-submit" id="submitBtn">
           <div class="spinner"></div>
@@ -829,103 +745,8 @@
 
   <!-- ─── JavaScript ───────────────────────────────────────── -->
   <script>
+    // ✏️ UPDATE: Replace with your actual N8N Webhook URL
     const N8N_WEBHOOK_URL = 'https://vincent133.zeabur.app/webhook/warranty-registration';
-
-    // ─── Photo Upload & Compression ─────────────────────────
-    let compressedPhotoBase64 = null;
-    let compressedPhotoMime   = 'image/jpeg';
-
-    function formatBytes(bytes) {
-      if (bytes < 1024) return bytes + ' B';
-      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-      return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
-    }
-
-    async function compressImage(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.onload = () => {
-            const MAX_W = 1200, MAX_H = 1200, QUALITY = 0.82;
-            let { width, height } = img;
-            if (width > MAX_W || height > MAX_H) {
-              const ratio = Math.min(MAX_W / width, MAX_H / height);
-              width  = Math.round(width  * ratio);
-              height = Math.round(height * ratio);
-            }
-            const canvas = document.createElement('canvas');
-            canvas.width = width; canvas.height = height;
-            canvas.getContext('2d').drawImage(img, 0, 0, width, height);
-            const dataUrl = canvas.toDataURL('image/jpeg', QUALITY);
-            resolve(dataUrl);
-          };
-          img.onerror = reject;
-          img.src = e.target.result;
-        };
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-
-    function setPhotoPreview(dataUrl, filename, originalSize) {
-      const compressedBytes = Math.round((dataUrl.length - 22) * 3 / 4);
-      document.getElementById('uploadThumb').src     = dataUrl;
-      document.getElementById('uploadFilename').textContent = filename;
-      document.getElementById('uploadFilesize').textContent =
-        `${formatBytes(compressedBytes)} (compressed from ${formatBytes(originalSize)})`;
-      document.getElementById('uploadPreview').classList.add('visible');
-      document.getElementById('uploadArea').classList.add('has-file');
-      document.getElementById('uploadArea').classList.remove('error-state');
-      document.getElementById('photoError').classList.remove('visible');
-    }
-
-    function clearPhoto() {
-      compressedPhotoBase64 = null;
-      document.getElementById('photoFile').value = '';
-      document.getElementById('uploadPreview').classList.remove('visible');
-      document.getElementById('uploadArea').classList.remove('has-file', 'error-state');
-      document.getElementById('uploadThumb').src = '';
-    }
-
-    document.getElementById('photoFile').addEventListener('change', async (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-      if (!file.type.startsWith('image/')) {
-        document.getElementById('uploadArea').classList.add('error-state');
-        document.getElementById('photoError').textContent = '⚠ Please upload an image file (JPEG or PNG).';
-        document.getElementById('photoError').classList.add('visible');
-        return;
-      }
-      try {
-        const dataUrl = await compressImage(file);
-        compressedPhotoBase64 = dataUrl;
-        compressedPhotoMime   = 'image/jpeg';
-        setPhotoPreview(dataUrl, file.name, file.size);
-      } catch {
-        document.getElementById('photoError').textContent = '⚠ Could not process image. Please try another file.';
-        document.getElementById('photoError').classList.add('visible');
-      }
-    });
-
-    document.getElementById('uploadRemove').addEventListener('click', clearPhoto);
-
-    // Drag-and-drop
-    const uploadArea = document.getElementById('uploadArea');
-    uploadArea.addEventListener('dragover',  (e) => { e.preventDefault(); uploadArea.classList.add('drag-over'); });
-    uploadArea.addEventListener('dragleave', ()  => uploadArea.classList.remove('drag-over'));
-    uploadArea.addEventListener('drop', async (e) => {
-      e.preventDefault();
-      uploadArea.classList.remove('drag-over');
-      const file = e.dataTransfer.files[0];
-      if (file) {
-        document.getElementById('photoFile').value = '';
-        if (!file.type.startsWith('image/')) return;
-        const dataUrl = await compressImage(file);
-        compressedPhotoBase64 = dataUrl;
-        setPhotoPreview(dataUrl, file.name, file.size);
-      }
-    });
 
     // ─── Date Constraints ───────────────────────────────────
     const dateInput = document.getElementById('purchaseDate');
@@ -1014,14 +835,6 @@
       if (!validateField('productModel', productModel !== '', 'productModelError')) valid = false;
       if (!validateField('purchaseDate', purchaseDate !== '', 'purchaseDateError')) valid = false;
 
-      // Photo validation
-      if (!compressedPhotoBase64) {
-        document.getElementById('uploadArea').classList.add('error-state');
-        document.getElementById('photoError').textContent = '⚠ Please upload a photo of your product.';
-        document.getElementById('photoError').classList.add('visible');
-        valid = false;
-      }
-
       if (!valid) {
         // Scroll to first error
         document.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -1042,8 +855,6 @@
         orderId,
         productModel,
         purchaseDate,
-        photoBase64:  compressedPhotoBase64,
-        photoMimeType: compressedPhotoMime,
         submittedAt: new Date().toISOString(),
         source: 'warranty-form',
         userAgent: navigator.userAgent
