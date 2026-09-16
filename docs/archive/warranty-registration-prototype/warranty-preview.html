@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Lifetime Warranty &amp; Product Care — Ward Rain&amp;Sun Preview</title>
+  <meta name="description" content="Ward Rain&Sun lifetime warranty information, operating instructions, umbrella care, and product support." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --preview-green: #2f6d51;
+      --preview-line: #ddd4c5;
+    }
+
+    body {
+      background: #fbfaf7;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -80px;
+      left: 12px;
+      z-index: 1000;
+      padding: 10px 14px;
+      color: var(--navy);
+      background: var(--white);
+      border-radius: var(--radius-sm);
+    }
+
+    .skip-link:focus {
+      top: 12px;
+    }
+
+    .draft-bar {
+      padding: 7px 16px;
+      color: #5a3f8d;
+      background: #f1ecfb;
+      border-bottom: 1px solid #dbd0ef;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .preview-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 10px 20px;
+      background: rgba(12, 35, 64, 0.98);
+    }
+
+    .preview-nav .nav-logo {
+      text-decoration: none;
+    }
+
+    .preview-nav .support-link {
+      padding: 8px 13px;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 500;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .care-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 3.75rem 1.25rem 3.5rem;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 78% 18%, rgba(201, 169, 110, 0.17), transparent 34%),
+        var(--navy);
+      text-align: center;
+    }
+
+    .care-hero::after {
+      content: '';
+      position: absolute;
+      right: -8%;
+      bottom: -135px;
+      left: -8%;
+      height: 175px;
+      border: 1px solid rgba(201, 169, 110, 0.16);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      color: var(--gold);
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .care-hero h1 {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--cream);
+      font-size: clamp(2.35rem, 9vw, 4.15rem);
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+    }
+
+    .scan-note {
+      margin: 1.05rem auto 0;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    .route-heading {
+      margin: 1.65rem 0 0;
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .route-grid {
+      display: grid;
+      gap: 0.8rem;
+      max-width: 760px;
+      margin: 1rem auto 0;
+      text-align: left;
+    }
+
+    .route-card {
+      display: flex;
+      flex-direction: column;
+      padding: 1.3rem;
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: var(--radius-md);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .route-card.support-route {
+      color: var(--white);
+      background: #17395e;
+      border-color: rgba(201, 169, 110, 0.5);
+    }
+
+    .route-label {
+      margin: 0 0 0.45rem;
+      color: var(--gold-dark);
+      font-size: 0.69rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .support-route .route-label {
+      color: var(--gold);
+    }
+
+    .route-card h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.28rem;
+    }
+
+    .support-route h2 {
+      color: var(--white);
+    }
+
+    .route-card p {
+      margin: 0.45rem 0 1.1rem;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .support-route p {
+      color: #c4d0dc;
+    }
+
+    .route-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .hero-legal {
+      max-width: 600px;
+      margin: 1.25rem auto 0;
+      color: #9fb0c0;
+      font-size: 0.78rem;
+    }
+
+    .inline-link {
+      color: var(--gold);
+      font-weight: 500;
+      text-underline-offset: 3px;
+    }
+
+    .setup-section,
+    .instructions-section,
+    .care-section,
+    .warranty-section {
+      padding: 3.75rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .section-heading .kicker {
+      margin: 0 0 0.4rem;
+      color: var(--gold-dark);
+      font-size: 0.73rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--navy);
+    }
+
+    .section-heading p {
+      max-width: 600px;
+      margin: 0.65rem auto 0;
+      color: var(--text-muted);
+    }
+
+    .setup-section {
+      background: var(--cream);
+    }
+
+    .setup-grid {
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .setup-card,
+    .care-card {
+      padding: 1.4rem;
+      background: var(--white);
+      border: 1px solid var(--preview-line);
+      border-radius: var(--radius-md);
+    }
+
+    .setup-number {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 0.9rem;
+      color: var(--navy);
+      background: var(--cream);
+      border: 1px solid #dfd2ba;
+      border-radius: 50%;
+      font-family: var(--font-serif);
+      font-weight: 700;
+    }
+
+    .setup-card h3,
+    .care-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.08rem;
+    }
+
+    .setup-card p,
+    .care-card p {
+      margin: 0.45rem 0 0;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .instructions-section {
+      background: var(--white);
+    }
+
+    .instruction-panel {
+      max-width: 840px;
+      margin: 0 auto;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--navy);
+      border: 2px solid var(--gold);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 48px rgba(12, 35, 64, 0.16);
+    }
+
+    .instruction-intro {
+      padding: 1.75rem 1.35rem;
+      background: linear-gradient(135deg, rgba(201, 169, 110, 0.12), transparent 62%);
+      border-bottom: 1px solid rgba(201, 169, 110, 0.3);
+      text-align: center;
+    }
+
+    .instruction-intro h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(1.6rem, 6vw, 2.25rem);
+    }
+
+    .instruction-intro p {
+      max-width: 580px;
+      margin: 0.65rem auto 0;
+      color: #bdcad7;
+      font-size: 0.9rem;
+    }
+
+    .instruction-columns {
+      display: grid;
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .instruction-group {
+      padding: 1.5rem 1.25rem;
+      background: var(--navy);
+    }
+
+    .instruction-group h3 {
+      margin: 0 0 1rem;
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .instruction-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .instruction-list li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 0.7rem;
+      align-items: start;
+      color: #f2f5f8;
+      font-size: 0.9rem;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      color: var(--navy);
+      background: var(--gold);
+      border-radius: 50%;
+      font-size: 0.74rem;
+      font-weight: 700;
+    }
+
+    .care-section {
+      background: #f8f6f1;
+    }
+
+    .care-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .care-card {
+      position: relative;
+      padding-top: 1.65rem;
+    }
+
+    .care-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1.4rem;
+      width: 42px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    .warranty-section {
+      background: var(--white);
+    }
+
+    .warranty-summary {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      background: var(--cream);
+      border: 1px solid var(--preview-line);
+      border-radius: var(--radius-md);
+      text-align: center;
+    }
+
+    .warranty-summary h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.5rem;
+    }
+
+    .warranty-summary p {
+      margin: 0.6rem auto 0;
+      color: var(--text-mid);
+      font-size: 0.9rem;
+    }
+
+    .draft-terms-note {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    .support-section {
+      padding: 4rem 1.25rem;
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .support-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .support-section h2 {
+      margin: 0;
+      color: var(--cream);
+      font-size: clamp(1.8rem, 7vw, 2.55rem);
+    }
+
+    .support-section p {
+      max-width: 650px;
+      margin: 0.7rem auto 0;
+      color: #bdcad7;
+    }
+
+    .support-email {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--gold);
+      font-size: clamp(1.05rem, 5vw, 1.35rem);
+      font-weight: 500;
+      text-underline-offset: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .support-list {
+      max-width: 520px;
+      display: grid;
+      gap: 0.5rem;
+      margin: 1.5rem auto 0;
+      padding: 1.25rem 1.25rem 1.25rem 2.7rem;
+      color: #ecf1f5;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      text-align: left;
+    }
+
+    .support-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      max-width: 430px;
+      margin: 1.5rem auto 0;
+    }
+
+    .support-note {
+      margin-top: 1rem !important;
+      color: #99abba !important;
+      font-size: 0.77rem;
+    }
+
+    .amazon-link {
+      display: inline-block;
+      margin-top: 1.25rem;
+      color: #d7e0e8;
+      font-size: 0.82rem;
+      text-underline-offset: 3px;
+    }
+
+    .preview-footer {
+      padding: 2rem 1.25rem;
+      color: var(--slate-light);
+      background: #07182b;
+      text-align: center;
+    }
+
+    .preview-footer .footer-logo {
+      margin: 0;
+    }
+
+    .preview-footer p {
+      margin-top: 0.55rem;
+      color: var(--slate-light);
+      font-size: 0.78rem;
+    }
+
+    .preview-footer a {
+      color: var(--gold);
+    }
+
+    @media (min-width: 680px) {
+      .preview-nav {
+        padding-right: 2rem;
+        padding-left: 2rem;
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .support-actions {
+        flex-direction: row;
+        justify-content: center;
+        max-width: none;
+      }
+
+      .support-actions .btn {
+        min-width: 205px;
+      }
+
+      .setup-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .instruction-columns {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .instruction-group {
+        padding: 1.75rem;
+      }
+
+      .care-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 579px) {
+      .care-hero {
+        padding-top: 3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="draft-bar">Draft Preview — Not Live</div>
+
+  <nav class="preview-nav" aria-label="Preview navigation">
+    <a href="/" class="nav-logo">Ward <span>Rain&amp;Sun</span></a>
+    <a class="support-link" href="#product-support">Product Support</a>
+  </nav>
+
+  <main id="main-content">
+    <header class="care-hero">
+      <div class="hero-inner">
+        <span class="hero-eyebrow">Ward Rain&amp;Sun Lifetime Warranty</span>
+        <h1>Lifetime Warranty &amp; Product Care</h1>
+        <p class="scan-note">You scanned the Ward Rain&amp;Sun warranty card. You’re in the right place.</p>
+        <h2 class="route-heading">What would you like to do today?</h2>
+        <div class="route-grid">
+          <article class="route-card setup-route">
+            <p class="route-label">Set Up &amp; Care</p>
+            <h2>Set Up &amp; Care for My Umbrella</h2>
+            <p>Review the correct automatic open, close, reset, and care instructions.</p>
+            <a class="btn btn-navy" href="#operating-instructions">View Instructions</a>
+          </article>
+          <article class="route-card support-route">
+            <p class="route-label">Product Issue</p>
+            <h2>Get Help With a Product Issue</h2>
+            <p>Contact Product Support with your Amazon Order ID, product photos, and a brief description.</p>
+            <a class="btn btn-primary" href="#product-support">Get Product Support</a>
+          </article>
+        </div>
+        <p class="hero-legal">Looking for coverage details? <a class="inline-link" href="#warranty-information">View Warranty Information</a></p>
+      </div>
+    </header>
+
+    <section class="support-section" id="product-support" aria-labelledby="support-title">
+      <div class="support-inner">
+        <h2 id="support-title">Need Help With Your Umbrella?</h2>
+        <p>If you have any product questions or need warranty support, please email:</p>
+        <a class="support-email" href="mailto:support@wardrainsun.com?subject=Ward%20Rain%26Sun%20Product%20Support%20Request">support@wardrainsun.com</a>
+        <p>To help us assist you faster, please include:</p>
+        <ul class="support-list">
+          <li>Your Amazon Order ID</li>
+          <li>Your product model, if known</li>
+          <li>A clear photo of the full umbrella</li>
+          <li>A photo showing the issue</li>
+          <li>A brief description of the problem</li>
+        </ul>
+        <div class="support-actions">
+          <a class="btn btn-primary" href="mailto:support@wardrainsun.com?subject=Ward%20Rain%26Sun%20Product%20Support%20Request&amp;body=Amazon%20Order%20ID%3A%0D%0AProduct%20Model%3A%0D%0AProblem%20Description%3A%0D%0A%0D%0APlease%20attach%3A%0D%0A1.%20One%20clear%20photo%20of%20the%20full%20umbrella%0D%0A2.%20One%20photo%20showing%20the%20issue">Email Product Support</a>
+          <a class="btn btn-secondary" href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener">Amazon Your Orders</a>
+        </div>
+        <p class="support-note">Please attach your product photos manually before sending your email. We’ll only use your email and the information you provide to respond to your current Product Support or warranty request. It will not be used for marketing or promotional messages.</p>
+        <a class="amazon-link" href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener">Purchased through Amazon? You may also contact the seller through Your Orders on Amazon.com.</a>
+      </div>
+    </section>
+
+    <section class="setup-section" aria-labelledby="setup-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="kicker">A simple early-care checklist</p>
+          <h2 id="setup-title">Your 30-Day Warranty Setup</h2>
+        </div>
+        <div class="setup-grid">
+          <article class="setup-card">
+            <div class="setup-number" aria-hidden="true">1</div>
+            <h3>Keep Your Order ID</h3>
+            <p>Save your Amazon Order ID as proof of purchase.</p>
+          </article>
+          <article class="setup-card">
+            <div class="setup-number" aria-hidden="true">2</div>
+            <h3>Save a Product Photo</h3>
+            <p>Keep one clear photo of the full umbrella for your own records.</p>
+          </article>
+          <article class="setup-card">
+            <div class="setup-number" aria-hidden="true">3</div>
+            <h3>Review the Instructions</h3>
+            <p>Learn the correct way to open, close, reset, and care for your umbrella.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="instructions-section" id="operating-instructions" aria-labelledby="instructions-title">
+      <div class="instruction-panel">
+        <div class="instruction-intro">
+          <h2 id="instructions-title">Important: Correct Auto Open &amp; Close Instructions</h2>
+          <p>Proper operation helps protect the automatic mechanism and keeps your umbrella working smoothly.</p>
+        </div>
+        <div class="instruction-columns">
+          <section class="instruction-group" aria-labelledby="open-title">
+            <h3 id="open-title">Before Opening</h3>
+            <ol class="instruction-list">
+              <li><span class="step-number">1</span><strong>Unfasten the strap.</strong></li>
+              <li><span class="step-number">2</span><strong>Gently shake the umbrella to loosen the canopy and ribs.</strong></li>
+              <li><span class="step-number">3</span><strong>Press the button to open.</strong></li>
+            </ol>
+          </section>
+          <section class="instruction-group" aria-labelledby="close-title">
+            <h3 id="close-title">To Close</h3>
+            <ol class="instruction-list">
+              <li><span class="step-number">1</span><strong>Press the button once to close the canopy.</strong></li>
+              <li><span class="step-number">2</span><strong>Then use both hands—one on the handle and one near the top of the shaft—to push the shaft together in one quick, controlled motion until it locks.</strong></li>
+            </ol>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="care-section" aria-labelledby="care-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="kicker">Simple habits that help</p>
+          <h2 id="care-title">Care Tips</h2>
+        </div>
+        <div class="care-grid">
+          <article class="care-card">
+            <h3>Dry Fully</h3>
+            <p>Allow the umbrella to air-dry before long-term storage.</p>
+          </article>
+          <article class="care-card">
+            <h3>Loosen Before Opening</h3>
+            <p>Gently loosen the canopy before pressing the automatic open button.</p>
+          </article>
+          <article class="care-card">
+            <h3>Store Dry</h3>
+            <p>Keep the umbrella in a cool, dry place. Never store it while wet.</p>
+          </article>
+          <article class="care-card">
+            <h3>Avoid Strong Wind</h3>
+            <p>Avoid using the umbrella in severe wind or conditions beyond its intended use.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="warranty-section" id="warranty-information" aria-labelledby="warranty-title">
+      <div class="warranty-summary">
+        <h2 id="warranty-title">Warranty Information</h2>
+        <p>The Ward Rain&amp;Sun Lifetime Limited Warranty is intended to cover eligible defects in materials and workmanship under normal and intended use. Proof of purchase may be required. Coverage is subject to the final warranty terms and exclusions.</p>
+        <span class="draft-terms-note">Draft summary for Preview review. Final legal terms must be approved before production launch.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="preview-footer">
+    <div class="footer-logo">Ward <span>Rain&amp;Sun</span></div>
+    <p><a href="#warranty-information">Warranty Information</a> &nbsp;·&nbsp; <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a></p>
+    <p>&copy; 2026 Ward Rain&amp;Sun. V1 Preview — Not Live.</p>
+  </footer>
+
+</body>
+</html>
