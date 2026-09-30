@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZMWVTXSWFM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZMWVTXSWFM', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support &amp; FAQ | Ward Rain&amp;Sun</title>
+  <meta name="description" content="Find Amazon order assistance, product-care guidance, and manufacturer support for Ward Rain&Sun umbrellas." />
+  <link rel="canonical" href="https://wardrainsun.com/support" />
+  <link rel="stylesheet" href="css/style.css?v=20260916" />
+  <style>
+    body { background: var(--cream); }
+
+    .support-intro {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 3.5rem 1.25rem 1rem;
+      text-align: center;
+    }
+
+    .support-intro h2 { color: var(--navy); margin-bottom: 0.55rem; }
+    .support-intro p { max-width: 580px; margin: 0 auto; font-size: 0.94rem; }
+
+    .faq-section {
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 4rem;
+    }
+
+    .faq-category + .faq-category { margin-top: 2.5rem; }
+
+    .faq-category-label {
+      color: #876627;
+      font-size: 0.73rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #D9CEBD;
+      padding-bottom: 0.55rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #E1D8CA;
+    }
+
+    .faq-item summary {
+      min-height: 56px;
+      padding: 1rem 2.25rem 1rem 0;
+      display: flex;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      color: var(--navy);
+      font-weight: 500;
+      line-height: 1.45;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 26px;
+      border: 1px solid #C8BAA5;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #755719;
+      font-size: 1.05rem;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after { content: '−'; }
+
+    .faq-answer {
+      padding: 0 2.25rem 1.1rem 0;
+    }
+
+    .faq-answer p {
+      font-size: 0.91rem;
+      line-height: 1.72;
+    }
+
+    .faq-answer a {
+      color: #755719;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .contact-section {
+      background: var(--navy);
+      padding: 4rem 1.25rem;
+    }
+
+    .contact-shell {
+      width: min(100%, 820px);
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-section h2 { color: var(--cream); margin-bottom: 0.55rem; }
+    .contact-lead { color: #B9C9DA; max-width: 560px; margin: 0 auto 2rem; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.065);
+      border: 1px solid rgba(201, 169, 110, 0.32);
+      border-radius: 16px;
+      padding: 1.45rem;
+    }
+
+    .contact-card.primary {
+      background: var(--white);
+      border-color: var(--white);
+    }
+
+    .contact-label {
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .contact-card.primary .contact-label { color: #876627; }
+    .contact-card h3 { color: var(--cream); margin: 0.35rem 0; }
+    .contact-card.primary h3 { color: var(--navy); }
+    .contact-card p { color: #B9C9DA; font-size: 0.86rem; line-height: 1.6; margin-bottom: 1rem; }
+    .contact-card.primary p { color: var(--text-mid); }
+
+    .contact-email {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--cream);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .help-cta {
+      background: var(--cream);
+      padding: 3rem 1.25rem;
+      text-align: center;
+    }
+
+    .help-cta h2 { color: var(--navy); font-size: 1.4rem; margin-bottom: 0.45rem; }
+    .help-cta p { font-size: 0.9rem; margin: 0 auto 1.25rem; max-width: 500px; }
+
+    @media (max-width: 650px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-card.primary { order: 1; }
+      .contact-card:not(.primary) { order: 2; }
+    }
+
+    @media (max-width: 520px) {
+      .page-header { padding: 2.2rem 1rem 2rem; }
+      .support-intro { padding: 2.5rem 1rem 0.75rem; }
+      .faq-section { padding-inline: 1rem; }
+      .contact-section { padding: 3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="gold-rule"></div>
+
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo" aria-label="Ward Rain and Sun home">Ward <span>Rain&amp;Sun</span></a>
+    <div class="nav-links">
+      <a href="support.html" class="nav-text" aria-current="page" style="color:var(--gold)">Support</a>
+      <a href="warranty.html" class="btn nav-cta">Warranty Help &amp; Care</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <h1>Support &amp; FAQ</h1>
+    <p>Order help, care guidance, and manufacturer support.</p>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section class="support-intro" aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently asked questions</h2>
+      <p>For purchases made on Amazon.com, Amazon Your Orders is the primary place to start. Ward Rain&amp;Sun support is available for product-care and included-card questions.</p>
+    </section>
+
+    <section class="faq-section" aria-label="Frequently asked questions">
+      <div class="faq-category">
+        <p class="faq-category-label">Warranty help</p>
+
+        <details class="faq-item">
+          <summary>Do I need to complete an online form before requesting help?</summary>
+          <div class="faq-answer">
+            <p>No online form is required on this website. Please keep your proof of purchase. For an Amazon.com order, begin in <a href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener noreferrer">Amazon Your Orders</a> to view the support options associated with your purchase.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What should I do if the wording on my included card is confusing?</summary>
+          <div class="faq-answer">
+            <p>You are in the right place. The card directs customers to Ward Rain&amp;Sun support, but this site does not require an online setup step. For questions about the card, email <a href="mailto:support@wardrainsun.com?subject=Warranty%20Card%20Question">support@wardrainsun.com</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Does this page define the coverage or remedy for my product?</summary>
+          <div class="faq-answer">
+            <p>No. This page is a support guide and does not create or replace formal warranty terms. Start with Amazon Your Orders for your purchase, or contact Ward Rain&amp;Sun if you need help understanding the included card.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-category">
+        <p class="faq-category-label">Product issues</p>
+
+        <details class="faq-item">
+          <summary>My umbrella is damaged or is not working normally. Where do I start?</summary>
+          <div class="faq-answer">
+            <p>Stop using or forcing the product if doing so could be unsafe. For an Amazon.com purchase, open <a href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener noreferrer">Amazon Your Orders</a> first. If your question is about product care or the included card, you can also contact <a href="mailto:support@wardrainsun.com?subject=Product%20Support%20Question">Ward Rain&amp;Sun support</a>.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What information should I include in my first email?</summary>
+          <div class="faq-answer">
+            <p>A brief description of your question is enough to begin. The email link on this site adds only a general subject line. Do not send sensitive personal information. Additional details can be requested if they are needed to address your question.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-category">
+        <p class="faq-category-label">Care &amp; safe use</p>
+
+        <details class="faq-item">
+          <summary>How should I dry and store my umbrella?</summary>
+          <div class="faq-answer">
+            <p>After wet use, open the umbrella in a ventilated place and let it dry completely. Store it only after the canopy and frame are dry.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>What should I do in strong wind?</summary>
+          <div class="faq-answer">
+            <p>Avoid using an umbrella in severe or dangerous wind. Weather conditions can change quickly, so prioritize personal safety and seek shelter when needed.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>The mechanism feels unusual. Should I keep trying it?</summary>
+          <div class="faq-answer">
+            <p>No. Stop forcing the mechanism and seek product support. Model-specific operating steps will be published only after they have been verified against the physical product.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-category">
+        <p class="faq-category-label">Amazon orders</p>
+
+        <details class="faq-item">
+          <summary>How do I find my order or purchase options?</summary>
+          <div class="faq-answer">
+            <p>Sign in to Amazon.com and open <a href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener noreferrer">Your Orders</a>. Select the relevant purchase to see the order details and options Amazon provides.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>I want to return or exchange my umbrella. What should I do?</summary>
+          <div class="faq-answer">
+            <p>Use Amazon Your Orders for standard return or exchange options on a purchase made through Amazon.com. The options displayed there are tied to your order.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-heading">
+      <div class="contact-shell">
+        <h2 id="contact-heading">Still need help?</h2>
+        <p class="contact-lead">Choose the path that matches your question. This website does not collect order details or product photos.</p>
+        <div class="contact-grid">
+          <article class="contact-card primary">
+            <span class="contact-label">Primary for Amazon purchases</span>
+            <h3>Amazon Your Orders</h3>
+            <p>View the order and the support, return, or exchange options available for that purchase.</p>
+            <a class="btn btn-navy btn-full" href="https://www.amazon.com/gp/css/order-history" target="_blank" rel="noopener noreferrer">Open Amazon Your Orders</a>
+          </article>
+          <article class="contact-card">
+            <span class="contact-label">Manufacturer support</span>
+            <h3>Product care or card question</h3>
+            <p>Use email for a question about product care or the warranty card included in the package.</p>
+            <a class="contact-email" href="mailto:support@wardrainsun.com?subject=Product%20Support%20Question">support@wardrainsun.com</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="help-cta" aria-labelledby="care-heading">
+      <h2 id="care-heading">Warranty Help &amp; Care</h2>
+      <p>See the customer path, safe-use guidance, and simple care checklist in one place.</p>
+      <a href="warranty.html" class="btn btn-navy">Visit Warranty Help &amp; Care →</a>
+    </section>
+  </main>
+
+  <div class="gold-rule"></div>
+  <footer class="footer">
+    <div class="footer-logo">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="warranty.html">Warranty Help &amp; Care</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="mailto:support@wardrainsun.com?subject=Product%20Support%20Question">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2026 Ward Rain&amp;Sun. All rights reserved.</p>
+  </footer>
+</body>
+</html>
