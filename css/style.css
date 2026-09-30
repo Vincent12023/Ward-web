@@ -78,11 +78,6 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
   letter-spacing: 0.02em;
 }
 .nav-logo span { color: var(--gold); }
-.nav-logo img {
-  width: 178px;
-  max-height: 34px;
-  object-fit: contain;
-}
 .nav-links { display: flex; align-items: center; gap: 1.5rem; }
 .nav-links a {
   font-size: 0.85rem;
@@ -95,29 +90,15 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
   background: var(--gold);
   color: var(--navy) !important;
   font-weight: 500 !important;
-  padding: 7px 16px !important;
+  padding: 7px 16px;
   border-radius: var(--radius-sm);
   transition: background 0.2s !important;
-  min-height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 .nav-cta:hover { background: var(--gold-dark) !important; }
 
 /* Mobile nav — hide text links, keep CTA */
 @media (max-width: 520px) {
   .nav-links .nav-text { display: none; }
-  .nav {
-    padding: 0 1rem;
-  }
-  .nav-logo img {
-    width: 140px;
-  }
-  .nav-cta {
-    font-size: 0.82rem !important;
-    padding: 7px 12px !important;
-  }
 }
 
 /* ── Buttons ── */

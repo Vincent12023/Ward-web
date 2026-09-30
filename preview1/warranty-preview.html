@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Lifetime Warranty — Ward Rain&amp;Sun Preview</title>
+  <meta name="description" content="Ward Rain&Sun Lifetime Warranty Record V1 preview." />
+  <link rel="stylesheet" href="css/warranty-preview.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="draft-bar"><span class="draft-dot" aria-hidden="true"></span>Draft Preview — Not Live</div>
+  <nav class="preview-nav" aria-label="Preview navigation">
+    <a class="brand" href="/">Ward <span>Rain&amp;Sun</span></a>
+    <div class="nav-actions">
+      <a class="nav-link" href="/warranty-terms-preview">Warranty Terms</a>
+      <a class="nav-support" href="/warranty-claim-preview">Get Product Support</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero" id="warranty-hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Ward Rain&amp;Sun Product Care</div>
+        <h1 id="hero-title">Lifetime Warranty</h1>
+        <h2 id="hero-subtitle">Complete Your Warranty Record Within 30 Days</h2>
+        <p class="hero-copy" id="hero-copy">Create your Warranty Record early to document your umbrella's condition, review important operating instructions, and make future product support faster and easier.</p>
+        <p class="hero-legal">Backed by the Ward Rain&amp;Sun Lifetime Limited Warranty. Terms and exclusions apply. <a class="text-link" href="/warranty-terms-preview">View Warranty Terms</a></p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="start-setup" type="button">Start My 30-Day Warranty Setup</button>
+          <a class="btn btn-ghost-light" href="/warranty-claim-preview">Get Product Support</a>
+        </div>
+        <p class="time-note">Takes about 1 minute</p>
+        <p class="hero-support">Already have a problem with your umbrella? <a href="/warranty-claim-preview">Get Product Support</a></p>
+      </div>
+    </section>
+
+    <section class="section section-cream why-section" aria-labelledby="why-heading">
+      <div class="wide">
+        <div class="section-heading">
+          <p class="section-kicker">Early Warranty Setup Window</p>
+          <h2 id="why-heading">Why complete this within 30 days?</h2>
+        </div>
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="card-number" aria-hidden="true">1</div>
+            <h3>Document Your Early Product Condition</h3>
+            <p>Upload a clear photo while your umbrella is still relatively new.</p>
+            <span class="window-label">Early product record</span>
+          </article>
+          <article class="why-card">
+            <div class="card-number" aria-hidden="true">2</div>
+            <h3>Learn the Correct Way to Use It</h3>
+            <p>Review the important auto open, auto close, and reset steps before incorrect handling causes damage.</p>
+            <span class="window-label">Simple operating guide</span>
+          </article>
+          <article class="why-card">
+            <div class="card-number" aria-hidden="true">3</div>
+            <h3>Make Future Support Easier</h3>
+            <p>Your Warranty Record helps us identify your product and locate your information faster if you ever need assistance.</p>
+            <span class="window-label">Faster product support</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow-wrap" id="setup" hidden aria-labelledby="workflow-title">
+      <div class="workflow-shell">
+        <div class="stepper" aria-label="Warranty Record progress">
+          <div class="stepper-item active" data-step="1"><span class="stepper-dot">1</span><span>Product Details</span></div>
+          <div class="stepper-item" data-step="2"><span class="stepper-dot">2</span><span>Important Information</span></div>
+          <div class="stepper-item" data-step="3"><span class="stepper-dot">3</span><span>Confirmation</span></div>
+        </div>
+
+        <section class="panel active" id="panel-prepare">
+          <p class="panel-tag">Before you begin</p>
+          <h2 id="workflow-title">You'll need:</h2>
+          <ul class="need-list">
+            <li><span class="need-check" aria-hidden="true">✓</span>Your Amazon Order ID</li>
+            <li><span class="need-check" aria-hidden="true">✓</span>Your Ward Rain&amp;Sun umbrella</li>
+            <li><span class="need-check" aria-hidden="true">✓</span>One clear photo of the full umbrella</li>
+          </ul>
+          <p class="panel-note">This usually takes about 1 minute.</p>
+          <p class="privacy-note"><span aria-hidden="true">◇</span>This preview keeps information in your current browser session only. Nothing is sent to Ward Rain&amp;Sun.</p>
+          <div class="button-row">
+            <button class="btn btn-navy" id="prepare-continue" type="button">Continue</button>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-details" aria-labelledby="details-title">
+          <p class="panel-tag">Step 1 of 3</p>
+          <h2 id="details-title">Tell us about your umbrella</h2>
+          <p class="panel-lead">Use the information from your Amazon order and product packaging.</p>
+
+          <form id="record-form" novalidate>
+            <div class="form-grid">
+              <div class="field-group">
+                <label for="order-id">Amazon Order ID <span class="required">*</span></label>
+                <input id="order-id" name="amazon_order_id" type="text" inputmode="numeric" autocomplete="off" placeholder="123-1234567-1234567" aria-describedby="order-help order-error" required />
+                <p class="field-help" id="order-help">Find this in Your Orders on Amazon.com.</p>
+                <p class="field-error" id="order-error">Please check your Amazon Order ID. It usually looks similar to: 123-1234567-1234567</p>
+              </div>
+
+              <div class="field-group">
+                <label for="product-model">Product Model <span class="required">*</span></label>
+                <input id="product-model" name="product_model" type="text" autocomplete="off" placeholder="Enter the model shown on the product or packaging" aria-describedby="model-help model-error" required />
+                <p class="field-help" id="model-help">The final model list will be connected after Product Team confirmation.</p>
+                <p class="field-error" id="model-error">Please enter the product model shown on your product or packaging.</p>
+              </div>
+
+              <div class="field-group">
+                <label for="purchase-date">Purchase Date <span class="required">*</span></label>
+                <input id="purchase-date" name="purchase_date" type="date" aria-describedby="date-error" required />
+                <p class="field-error" id="date-error">Please select a valid purchase date.</p>
+              </div>
+
+              <div class="field-group">
+                <span class="field-label">Upload a clear photo of your Ward Rain&amp;Sun umbrella <span class="required">*</span></span>
+                <p class="field-help">Please show the full umbrella so we can identify the model and document its current condition.</p>
+                <label class="upload-box" id="record-photo-box" for="record-photo">
+                  <input id="record-photo" name="product_photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="photo-error" />
+                  <span>
+                    <span class="upload-symbol" aria-hidden="true">＋</span>
+                    <span class="upload-title">Take or choose a product photo</span>
+                    <span class="upload-sub">JPEG, PNG or WebP · Local preview only</span>
+                  </span>
+                </label>
+                <div class="photo-preview" id="record-photo-preview">
+                  <img class="photo-thumb" id="record-photo-thumb" alt="Selected umbrella preview" />
+                  <div class="photo-meta">
+                    <div class="photo-name" id="record-photo-name"></div>
+                    <div class="photo-status">Ready for this preview</div>
+                  </div>
+                  <button class="remove-photo" id="record-photo-remove" type="button" aria-label="Remove product photo">Remove</button>
+                </div>
+                <p class="field-error" id="photo-error">Please upload a clear full-product photo.</p>
+                <details class="info-popover">
+                  <summary>Why do we ask for a photo?</summary>
+                  <p>A clear product photo helps us confirm your umbrella model and document its current condition for future warranty support.</p>
+                </details>
+              </div>
+            </div>
+
+            <div class="status-box" id="early-status" hidden role="status">
+              <strong>You're within your first 30 days.</strong>
+              <p>This is a great time to document your umbrella's early condition and review important operating instructions.</p>
+            </div>
+
+            <div class="route-box" id="after-30-route" hidden>
+              <h3>Before you continue</h3>
+              <p><strong>We noticed your purchase was more than 30 days ago.</strong></p>
+              <p>Are you creating a Warranty Record, or do you need help with your umbrella today?</p>
+              <div class="route-actions">
+                <button class="btn btn-outline" id="continue-record" type="button">I Just Want to Create My Warranty Record</button>
+                <button class="btn btn-navy" id="route-support" type="button">I Need Product Support</button>
+              </div>
+            </div>
+
+            <div class="button-row" id="details-actions">
+              <button class="btn btn-navy" type="submit">Check My Information</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel" id="panel-review" aria-labelledby="review-title">
+          <p class="panel-tag">Your information</p>
+          <h2 id="review-title">Please Check Your Information</h2>
+          <p class="panel-lead">Make sure everything below matches your purchase and product.</p>
+          <div class="review-list">
+            <div class="review-row"><span class="review-label">Amazon Order ID</span><span class="review-value" id="review-order"></span></div>
+            <div class="review-row"><span class="review-label">Product Model</span><span class="review-value" id="review-model"></span></div>
+            <div class="review-row"><span class="review-label">Purchase Date</span><span class="review-value" id="review-date"></span></div>
+            <div class="review-row"><span class="review-label">Product Photo</span><img class="review-photo" id="review-photo" alt="Selected full-product photo" /></div>
+          </div>
+          <div class="button-row">
+            <button class="btn btn-outline" id="edit-information" type="button">Edit Information</button>
+            <button class="btn btn-navy" id="review-continue" type="button">Continue to Important Information</button>
+          </div>
+        </section>
+
+        <section class="panel" id="panel-important" aria-labelledby="important-title">
+          <p class="panel-tag">Step 2 of 3</p>
+          <h2 id="important-title">Two Important Things Before You Finish</h2>
+          <p class="important-intro">Please take a moment to review these two important items. They can help you use your umbrella correctly and get support quickly if you ever need it.</p>
+
+          <article class="support-card">
+            <p class="item-number">Item 1</p>
+            <h3>Know How to Get Product Support</h3>
+            <p>If you ever have a question or experience an issue with your Ward Rain&amp;Sun umbrella, we're here to help.</p>
+            <p>For faster assistance, please have the following information ready:</p>
+            <ul class="support-list">
+              <li>Your Amazon Order ID</li>
+              <li>A clear full-product photo</li>
+              <li>A photo showing the issue, if applicable</li>
+              <li>A brief description of the problem</li>
+            </ul>
+            <div class="response-time">Most customer inquiries are answered within approximately 3 business days.</div>
+            <div class="email-line">
+              <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+              <button class="copy-button" type="button" data-copy-email>Copy email</button>
+            </div>
+            <p>Please include your Warranty Record ID, if available, so we can assist you more efficiently.</p>
+            <label class="check-row">
+              <input id="support-reviewed" type="checkbox" />
+              <span>I know how to reach Ward Rain&amp;Sun Product Support if I need help.</span>
+            </label>
+          </article>
+
+          <article class="instruction-module">
+            <header class="instruction-head">
+              <p class="item-number">Item 2 · Important operating guide</p>
+              <h3>Important: Correct Auto Open &amp; Close Instructions</h3>
+              <p>Proper opening and closing helps protect the automatic mechanism and keeps your umbrella working smoothly.</p>
+            </header>
+            <div class="instruction-body">
+              <section class="instruction-group" aria-labelledby="before-opening">
+                <h4 class="instruction-label" id="before-opening">Before Opening</h4>
+                <div class="instruction-steps">
+                  <div class="instruction-step"><span class="instruction-step-num">1</span><div><strong>Unfasten the strap.</strong></div></div>
+                  <div class="instruction-step"><span class="instruction-step-num">2</span><div><strong>Gently shake the umbrella to loosen the canopy and ribs.</strong></div></div>
+                  <div class="instruction-step"><span class="instruction-step-num">3</span><div><strong>Press the button to open.</strong></div></div>
+                </div>
+              </section>
+              <section class="instruction-group" aria-labelledby="to-close">
+                <h4 class="instruction-label" id="to-close">To Close</h4>
+                <div class="instruction-steps">
+                  <div class="instruction-step"><span class="instruction-step-num">1</span><div><strong>Press the button once.</strong><span>The canopy will automatically close.</span></div></div>
+                  <div class="instruction-step"><span class="instruction-step-num">2</span><div><strong>Hold the handle with one hand and place your other hand near the upper part of the shaft.</strong></div></div>
+                  <div class="instruction-step"><span class="instruction-step-num">3</span><div><strong>Push the shaft firmly together in one continuous motion until it locks.</strong></div></div>
+                </div>
+              </section>
+              <section class="video-placeholder" aria-label="Demo video placeholder">
+                <div class="play-disc" aria-hidden="true">▶</div>
+                <h4>Watch the 20-Second Demo</h4>
+                <p>Official Demo Video Coming Soon</p>
+              </section>
+              <p class="developer-note">PRODUCT TEAM MUST VERIFY FINAL OPERATING INSTRUCTIONS BEFORE PRODUCTION LAUNCH.<br />TODO: Replace with official Ward Rain&amp;Sun operating demo before production launch.</p>
+            </div>
+            <label class="check-row">
+              <input id="operating-reviewed" type="checkbox" />
+              <span>I have reviewed the correct way to open, close, and reset my umbrella.</span>
+            </label>
+          </article>
+
+          <div class="button-row">
+            <button class="btn btn-outline" id="important-back" type="button">Back</button>
+            <button class="btn btn-primary" id="create-record" type="button" disabled>Create My Warranty Record</button>
+          </div>
+        </section>
+
+        <section class="panel print-panel" id="panel-success" aria-labelledby="success-title">
+          <div class="success-view print-area">
+            <div class="success-mark" aria-hidden="true">✓</div>
+            <h2 id="success-title">30-Day Warranty Setup Complete</h2>
+            <p class="success-sub" id="success-subtitle">Your early Warranty Record has been created successfully.</p>
+            <p class="mock-banner">Preview only — this record exists only on this screen and was not sent or stored.</p>
+
+            <div class="record-card">
+              <div class="record-head"><strong>Ward Rain&amp;Sun Warranty Record</strong><span class="record-status" id="condition-status">Early Product Condition Recorded</span></div>
+              <dl class="record-details">
+                <div class="record-row"><dt>Warranty Record ID</dt><dd id="success-record-id"></dd></div>
+                <div class="record-row"><dt>Amazon Order ID</dt><dd id="success-order"></dd></div>
+                <div class="record-row"><dt>Product</dt><dd id="success-product"></dd></div>
+                <div class="record-row"><dt>Record Created</dt><dd id="success-created"></dd></div>
+                <div class="record-row" id="updated-row" hidden><dt>Warranty Record Updated At</dt><dd id="success-updated"></dd></div>
+                <div class="record-row"><dt>Care Instructions</dt><dd>Reviewed ✓</dd></div>
+                <div class="record-row"><dt>Product Support Information</dt><dd>Reviewed ✓</dd></div>
+              </dl>
+            </div>
+
+            <div class="order-received">
+              <strong>Order Information Received</strong>
+              <p>We'll use your order information to help locate your purchase if you ever need warranty support.</p>
+            </div>
+
+            <div class="success-actions">
+              <button class="btn btn-navy" id="save-confirmation" type="button">Save My Confirmation</button>
+              <button class="btn btn-outline" id="download-care" type="button">Download Care Guide</button>
+            </div>
+
+            <div class="update-block">
+              <strong>Entered something incorrectly?</strong>
+              <div class="update-actions">
+                <button class="btn btn-outline small-btn" id="update-information" type="button">Update Order ID</button>
+                <button class="btn btn-outline small-btn" id="update-product" type="button">Update Product Model or Date</button>
+                <button class="btn btn-outline small-btn" id="update-photo" type="button">Update Product Photo</button>
+              </div>
+            </div>
+
+            <div class="notice-box print-only">
+              <p><strong>Product Support:</strong> support@wardrainsun.com</p>
+              <p><strong>Warranty Terms:</strong> wardrainsun.com/warranty-terms-preview</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="care-tips" aria-labelledby="tips-title">
+      <div class="wide">
+        <div class="section-heading">
+          <p class="section-kicker">Product Care</p>
+          <h2 id="tips-title">Useful Tips for a Longer Umbrella Life</h2>
+        </div>
+        <div class="tips-grid">
+          <article class="tip"><h3>Dry Before Storing</h3><p>Allow the umbrella to air-dry before long-term storage.</p></article>
+          <article class="tip"><h3>Don't Force the Mechanism</h3><p>Always use the automatic open / close button as intended and reset the shaft correctly.</p></article>
+          <article class="tip"><h3>Loosen the Canopy Before Opening</h3><p>After unfastening the strap, gently loosen the canopy before pressing the open button.</p></article>
+          <article class="tip"><h3>Use Extra Care in Severe Weather</h3><p>Avoid using the umbrella in conditions beyond its intended use.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="support-band" aria-labelledby="record-help-title">
+      <div class="support-band-inner">
+        <h2 id="record-help-title">Need help with your Warranty Record?</h2>
+        <p>If you have any questions about your order information, Warranty Record, or product details, please contact us at:</p>
+        <div class="email-line" style="justify-content:center">
+          <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+          <button class="copy-button" type="button" data-copy-email>Copy email</button>
+        </div>
+        <p>Please include your Warranty Record ID and, if available, your Amazon Order ID so we can assist you more efficiently.</p>
+        <a class="btn btn-navy" href="/warranty-claim-preview">Get Product Support</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="preview-footer">
+    <div class="footer-brand">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="/warranty-preview">Warranty Record</a>
+      <a href="/warranty-claim-preview">Product Support</a>
+      <a href="/warranty-terms-preview">Warranty Terms</a>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2026 Ward Rain&amp;Sun. V1 Preview — Not Live.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/warranty-preview.js"></script>
+</body>
+</html>

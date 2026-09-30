@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Product Support &amp; Warranty Claim — Ward Rain&amp;Sun Preview</title>
+  <meta name="description" content="Ward Rain&Sun Product Support and Warranty Claim V1 preview." />
+  <link rel="stylesheet" href="css/warranty-preview.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="draft-bar"><span class="draft-dot" aria-hidden="true"></span>Draft Preview — Not Live</div>
+  <nav class="preview-nav" aria-label="Preview navigation">
+    <a class="brand" href="/">Ward <span>Rain&amp;Sun</span></a>
+    <div class="nav-actions">
+      <a class="nav-link" href="/warranty-terms-preview">Warranty Terms</a>
+      <a class="nav-support" href="/warranty-preview">Warranty Record</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <header class="claim-hero">
+      <div class="eyebrow">Ward Rain&amp;Sun Product Care</div>
+      <h1>Product Support &amp; Warranty Claim</h1>
+      <p>Tell us what's happening and we'll help you determine the next step.</p>
+    </header>
+
+    <section class="claim-main">
+      <div class="claim-shell">
+        <div class="carry-banner" id="carry-banner">Your product details from the Warranty Record flow have been brought forward in this browser. You can edit them below.</div>
+
+        <section id="issue-step" aria-labelledby="issue-heading">
+          <p class="panel-tag">Step 1</p>
+          <h2 id="issue-heading" style="margin:0;color:var(--navy);font-family:var(--font-serif);font-size:clamp(1.7rem,6vw,2.35rem);">What can we help you with?</h2>
+          <p class="panel-lead">Choose the option that best describes the product issue.</p>
+
+          <div class="issue-grid" role="radiogroup" aria-label="Product issue type">
+            <div class="issue-option"><input id="issue-auto" name="issue-type" type="radio" value="Auto open / close issue" /><label for="issue-auto">Auto open / close issue</label></div>
+            <div class="issue-option"><input id="issue-frame" name="issue-type" type="radio" value="Frame or rib issue" /><label for="issue-frame">Frame or rib issue</label></div>
+            <div class="issue-option"><input id="issue-shaft" name="issue-type" type="radio" value="Shaft issue" /><label for="issue-shaft">Shaft issue</label></div>
+            <div class="issue-option"><input id="issue-canopy" name="issue-type" type="radio" value="Canopy / stitching issue" /><label for="issue-canopy">Canopy / stitching issue</label></div>
+            <div class="issue-option"><input id="issue-handle" name="issue-type" type="radio" value="Handle issue" /><label for="issue-handle">Handle issue</label></div>
+            <div class="issue-option"><input id="issue-other" name="issue-type" type="radio" value="Other" /><label for="issue-other">Other</label></div>
+          </div>
+          <p class="field-error" id="issue-error">Please choose an issue type.</p>
+
+          <section class="troubleshoot" id="troubleshoot" hidden aria-labelledby="troubleshoot-title">
+            <div class="troubleshoot-copy">
+              <p class="item-number" style="color:var(--gold)">Quick troubleshooting</p>
+              <h3 id="troubleshoot-title">Let's Check One Important Step First</h3>
+              <p>Many automatic umbrella questions can be resolved by correctly resetting the shaft.</p>
+            </div>
+            <div class="video-placeholder" aria-label="Demo video placeholder">
+              <div class="play-disc" aria-hidden="true">▶</div>
+              <h4>Watch the 20-Second Demo</h4>
+              <p>Official Demo Video Coming Soon</p>
+            </div>
+            <p class="developer-note" style="margin:0 14px 14px">TODO: Replace with official Ward Rain&amp;Sun operating demo before production launch.</p>
+            <div class="troubleshoot-actions">
+              <button class="btn btn-primary" id="solved-button" type="button">That Solved It</button>
+              <button class="btn btn-ghost-light" id="still-help-button" type="button">I Still Need Help</button>
+            </div>
+          </section>
+
+          <section class="resolved-box" id="resolved-box" hidden aria-labelledby="resolved-title">
+            <h3 id="resolved-title">Glad that helped.</h3>
+            <p>Keep the correct reset steps handy for future use.</p>
+            <a class="btn btn-navy" href="#care-tips">View Care Tips</a>
+          </section>
+        </section>
+
+        <section id="claim-form-section" hidden aria-labelledby="claim-form-title">
+          <h2 class="form-section-title" id="claim-form-title">Support request details</h2>
+          <p class="panel-lead">Please share the information our Product Support team would need to understand the issue.</p>
+
+          <form id="claim-form" novalidate>
+            <div class="form-grid two-col">
+              <div class="field-group">
+                <label for="claim-order-id">Amazon Order ID <span class="required">*</span></label>
+                <input id="claim-order-id" name="amazon_order_id" type="text" inputmode="numeric" autocomplete="off" placeholder="123-1234567-1234567" aria-describedby="claim-order-error" required />
+                <p class="field-error" id="claim-order-error">Please check your Amazon Order ID. It usually looks similar to: 123-1234567-1234567</p>
+              </div>
+
+              <div class="field-group">
+                <label for="claim-model">Product Model <span class="required">*</span></label>
+                <input id="claim-model" name="product_model" type="text" autocomplete="off" placeholder="Enter the model shown on the product or packaging" aria-describedby="claim-model-error" required />
+                <p class="field-error" id="claim-model-error">Please enter the product model.</p>
+              </div>
+
+              <div class="field-group">
+                <label for="claim-date">Purchase Date <span class="optional">(if available)</span></label>
+                <input id="claim-date" name="purchase_date" type="date" aria-describedby="claim-date-error" />
+                <p class="field-error" id="claim-date-error">Please select a valid purchase date.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field-group">
+                <span class="field-label">Full Product Photo <span class="required">*</span></span>
+                <p class="field-help">Show the full umbrella so we can identify the model and overall condition.</p>
+                <label class="upload-box" id="full-photo-box" for="full-photo">
+                  <input id="full-photo" name="full_product_photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="full-photo-error" />
+                  <span><span class="upload-symbol" aria-hidden="true">＋</span><span class="upload-title">Take or choose a full-product photo</span><span class="upload-sub">JPEG, PNG or WebP · Local preview only</span></span>
+                </label>
+                <div class="photo-preview" id="full-photo-preview">
+                  <img class="photo-thumb" id="full-photo-thumb" alt="Selected full-product preview" />
+                  <div class="photo-meta"><div class="photo-name" id="full-photo-name"></div><div class="photo-status">Ready for this preview</div></div>
+                  <button class="remove-photo" id="full-photo-remove" type="button" aria-label="Remove full-product photo">Remove</button>
+                </div>
+                <p class="field-error" id="full-photo-error">Please upload a clear full-product photo.</p>
+              </div>
+
+              <div class="field-group">
+                <span class="field-label">Photo Showing the Issue <span class="required">*</span></span>
+                <p class="field-help">Show the affected area as clearly as possible.</p>
+                <label class="upload-box" id="issue-photo-box" for="issue-photo">
+                  <input id="issue-photo" name="issue_photo" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="issue-photo-error" />
+                  <span><span class="upload-symbol" aria-hidden="true">＋</span><span class="upload-title">Take or choose an issue photo</span><span class="upload-sub">JPEG, PNG or WebP · Local preview only</span></span>
+                </label>
+                <div class="photo-preview" id="issue-photo-preview">
+                  <img class="photo-thumb" id="issue-photo-thumb" alt="Selected issue photo preview" />
+                  <div class="photo-meta"><div class="photo-name" id="issue-photo-name"></div><div class="photo-status">Ready for this preview</div></div>
+                  <button class="remove-photo" id="issue-photo-remove" type="button" aria-label="Remove issue photo">Remove</button>
+                </div>
+                <p class="field-error" id="issue-photo-error">Please upload a clear photo showing the issue.</p>
+              </div>
+
+              <div class="field-group">
+                <label for="problem-description">Brief Description <span class="required">*</span></label>
+                <textarea id="problem-description" name="problem_description" placeholder="Tell us what happened, when you first noticed it, and how the umbrella is behaving now." aria-describedby="description-error" required></textarea>
+                <p class="field-error" id="description-error">Please briefly describe the product issue.</p>
+              </div>
+
+              <div class="field-group">
+                <label for="contact-email">Email for Support Updates <span class="required">*</span></label>
+                <input id="contact-email" name="contact_email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-use email-error" required />
+                <p class="field-help" id="email-use">We'll only use this email to communicate with you about this support request. It will not be used for marketing or promotional emails.</p>
+                <p class="field-error" id="email-error">Please enter a valid contact email.</p>
+              </div>
+            </div>
+
+            <p class="privacy-note"><span aria-hidden="true">◇</span>Preview only: photos, order information, and email stay in this page's temporary browser state and are not submitted.</p>
+            <div class="button-row">
+              <button class="btn btn-navy" type="submit">Submit Support Request</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="success-view" id="claim-success" hidden aria-labelledby="claim-success-title">
+          <div class="success-mark" aria-hidden="true">✓</div>
+          <h2 id="claim-success-title">Support Request Received</h2>
+          <p class="success-sub">The following is a Mock confirmation for this V1 Preview.</p>
+          <p class="mock-banner">Preview only — no support request, email, order information, or photo was sent or stored.</p>
+
+          <div class="record-card">
+            <div class="record-head"><strong>Ward Rain&amp;Sun Support Case</strong><span class="record-status">Mock Preview</span></div>
+            <dl class="record-details">
+              <div class="record-row"><dt>Case ID</dt><dd id="case-id"></dd></div>
+              <div class="record-row"><dt id="record-id-label">Warranty Record ID</dt><dd id="claim-record-id"></dd></div>
+              <div class="record-row"><dt>Issue Type</dt><dd id="success-issue-type"></dd></div>
+              <div class="record-row"><dt>Contact Email</dt><dd id="success-email"></dd></div>
+            </dl>
+          </div>
+          <p class="notice-box" id="created-record-message">We created a Warranty Record using the product information provided with your support request.</p>
+
+          <div class="status-preview-tool">
+            <label for="case-status-select">Internal preview tool · Case status message</label>
+            <select id="case-status-select">
+              <option value="reviewing">Reviewing</option>
+              <option value="verified">Verified</option>
+              <option value="needs-information">Needs More Information</option>
+            </select>
+            <div class="case-status-card" id="case-status-card" aria-live="polite"></div>
+          </div>
+
+          <div class="success-actions">
+            <button class="btn btn-outline" id="update-claim-order" type="button">Update Order ID</button>
+            <a class="btn btn-navy" href="mailto:support@wardrainsun.com">Contact Product Support</a>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="care-tips" aria-labelledby="claim-tips-title">
+      <div class="wide">
+        <div class="section-heading"><p class="section-kicker">Product Care</p><h2 id="claim-tips-title">Useful Tips for a Longer Umbrella Life</h2></div>
+        <div class="tips-grid">
+          <article class="tip"><h3>Dry Before Storing</h3><p>Allow the umbrella to air-dry before long-term storage.</p></article>
+          <article class="tip"><h3>Use the Button as Intended</h3><p>Use the automatic open / close button and reset the shaft correctly.</p></article>
+          <article class="tip"><h3>Loosen the Canopy First</h3><p>After unfastening the strap, gently loosen the canopy before opening.</p></article>
+          <article class="tip"><h3>Use Extra Care in Severe Weather</h3><p>Avoid using the umbrella in conditions beyond its intended use.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="preview-footer">
+    <div class="footer-brand">Ward <span>Rain&amp;Sun</span></div>
+    <div class="footer-links">
+      <a href="/warranty-preview">Warranty Record</a>
+      <a href="/warranty-claim-preview">Product Support</a>
+      <a href="/warranty-terms-preview">Warranty Terms</a>
+      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
+    </div>
+    <p>&copy; 2026 Ward Rain&amp;Sun. V1 Preview — Not Live.</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/warranty-claim-preview.js"></script>
+</body>
+</html>

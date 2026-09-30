@@ -43,27 +43,6 @@ body {
 }
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-
-:focus-visible {
-  outline: 3px solid #E2B75F;
-  outline-offset: 3px;
-}
-
-.skip-link {
-  position: fixed;
-  top: -100px;
-  left: 8px;
-  z-index: 1000;
-  background: var(--white);
-  color: var(--navy);
-  border: 2px solid var(--gold-dark);
-  border-radius: var(--radius-sm);
-  padding: 0.65rem 1rem;
-  font-weight: 500;
-  transition: top 0.2s ease;
-}
-.skip-link:focus { top: 8px; }
 
 /* ── Typography ── */
 h1, h2, h3, h4 { font-family: var(--font-serif); line-height: 1.25; }
@@ -101,9 +80,6 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
 .nav-logo span { color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: 1.5rem; }
 .nav-links a {
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--slate-light);
@@ -114,7 +90,7 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
   background: var(--gold);
   color: var(--navy) !important;
   font-weight: 500 !important;
-  padding: 9px 16px;
+  padding: 7px 16px;
   border-radius: var(--radius-sm);
   transition: background 0.2s !important;
 }
@@ -122,22 +98,12 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
 
 /* Mobile nav — hide text links, keep CTA */
 @media (max-width: 520px) {
-  .nav { padding-inline: 1rem; }
-  .nav-links { gap: 0.5rem; }
   .nav-links .nav-text { display: none; }
-  .nav-cta {
-    padding-inline: 10px;
-    font-size: 0.76rem !important;
-    line-height: 1.2;
-  }
 }
 
 /* ── Buttons ── */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
+  display: inline-block;
   font-family: var(--font-sans);
   font-size: 0.95rem;
   font-weight: 500;
@@ -240,17 +206,6 @@ p  { font-size: 1rem; font-weight: 300; color: var(--text-mid); }
 .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-  }
-  .fade-up { opacity: 1; transform: none; }
 }
 
 /* ── Utility ── */
