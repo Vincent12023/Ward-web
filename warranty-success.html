@@ -23,184 +23,144 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 3rem 1.5rem;
+      padding: 2rem 1.25rem;
       text-align: center;
     }
 
     .success-icon {
-      width: 72px;
-      height: 72px;
+      width: 62px;
+      height: 62px;
       background: var(--navy);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 1.75rem;
+      margin: 0 auto 1.25rem;
       animation: pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     @keyframes pop {
       from { transform: scale(0.5); opacity: 0; }
       to   { transform: scale(1);   opacity: 1; }
     }
-    .success-icon svg { width: 32px; height: 32px; }
-
-    .success-badge {
-      display: inline-block;
-      background: rgba(12,35,64,0.08);
-      color: var(--navy);
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
+    .success-icon svg { width: 28px; height: 28px; }
 
     .success-page h1 {
       color: var(--navy);
       font-size: clamp(1.8rem, 5vw, 2.5rem);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .success-page .greeting {
       color: var(--gold);
     }
 
-    .success-page > p {
+    .success-lead {
       color: var(--text-mid);
-      max-width: 380px;
-      margin: 0 auto 2rem;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      max-width: 420px;
+      margin: 0 auto 1.25rem;
     }
 
-    /* Confirmation box */
-    .confirm-box {
+    .status-card {
       background: var(--white);
       border: 1px solid #E8E0D0;
       border-radius: var(--radius-lg);
-      padding: 1.5rem 1.75rem;
-      max-width: 400px;
-      width: 100%;
-      margin: 0 auto 2.5rem;
+      color: var(--text-mid);
+      font-size: 0.86rem;
+      line-height: 1.55;
+      margin: 0 auto 1.25rem;
+      max-width: 440px;
+      padding: 1rem 1.2rem;
       text-align: left;
+      width: 100%;
     }
-    .confirm-box .confirm-label {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-    }
-    .confirm-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.5rem;
-    }
-    .confirm-dot {
-      width: 18px;
-      height: 18px;
-      background: #EAF3DE;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .confirm-dot svg { width: 9px; height: 9px; }
-    .confirm-text { font-size: 0.9rem; color: var(--text-mid); }
-    .confirm-email {
+    .status-card p { margin: 0; }
+    .status-card strong { color: var(--navy); }
+    .status-email {
       background: var(--cream);
       border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      font-size: 0.85rem;
-      color: var(--navy);
+      margin-top: 0.65rem !important;
+      padding: 0.55rem 0.7rem;
+    }
+    .status-email span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      margin-bottom: 1px;
+    }
+    .status-email strong {
+      display: block;
       font-weight: 500;
-      margin-top: 0.75rem;
       word-break: break-all;
     }
-    .confirm-email-label {
-      display: block;
+    .status-hint {
       color: var(--text-muted);
-      font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      margin-bottom: 2px;
-      text-transform: uppercase;
+      font-size: 0.79rem;
+      margin-top: 0.55rem !important;
     }
 
-    /* Next steps */
-    .next-steps {
-      max-width: 400px;
+    .draw-action {
+      margin: 0 auto 1.15rem;
+      max-width: 440px;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 2.5rem;
     }
-    .next-step-btn {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding: 1rem 1.25rem;
-      background: var(--white);
-      border: 1px solid #E8E0D0;
-      border-radius: var(--radius-md);
-      text-decoration: none;
-      transition: border-color 0.2s, transform 0.15s;
-      text-align: left;
-    }
-    .next-step-btn:hover { border-color: var(--gold); transform: translateY(-1px); }
-    .step-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: var(--radius-sm);
-      background: var(--cream);
-      display: flex;
+    .draw-btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-    }
-    .step-icon svg { width: 18px; height: 18px; }
-    .step-text {}
-    .step-title { font-size: 0.92rem; font-weight: 500; color: var(--navy); display: block; }
-    .step-desc  { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 1px; }
-
-    .support-note {
-      background: rgba(12,35,64,0.05);
+      gap: 0.55rem;
+      background: var(--navy);
       border-radius: var(--radius-md);
-      color: var(--text-mid);
-      font-size: 0.85rem;
-      line-height: 1.65;
-      margin: 0 auto 2rem;
-      max-width: 400px;
-      padding: 1.1rem 1.25rem;
+      color: var(--white);
+      font-size: 0.94rem;
+      font-weight: 500;
+      padding: 0.85rem 1.25rem;
+      text-decoration: none;
       width: 100%;
+      transition: background 0.2s, transform 0.15s;
     }
-    .support-note strong {
-      color: var(--navy);
-      display: block;
-      font-size: 0.92rem;
-      margin-bottom: 0.25rem;
+    .draw-btn:hover {
+      background: #16385F;
+      transform: translateY(-1px);
     }
-    .support-note a {
+    .draw-btn svg { width: 18px; height: 18px; }
+    .draw-note {
+      color: var(--text-muted);
+      font-size: 0.77rem;
+      margin: 0.45rem 0 0;
+    }
+
+    .help-line {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.65;
+      margin: 0 auto 1rem;
+      max-width: 520px;
+    }
+    .help-line a {
       color: var(--gold-dark);
       font-weight: 500;
       text-decoration: none;
       word-break: break-all;
     }
-    .support-note a:hover { text-decoration: underline; }
+    .help-line a:hover { text-decoration: underline; }
 
     .back-home {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       transition: color 0.2s, border-color 0.2s;
     }
     .back-home:hover { color: var(--navy); border-bottom-color: var(--navy); }
+
+    @media (max-width: 480px) {
+      .success-page {
+        justify-content: flex-start;
+        padding: 1.75rem 1rem 1.25rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -214,76 +174,29 @@
       </svg>
     </div>
 
-    <div class="success-badge">Submission Received</div>
     <h1>Thank you<span class="greeting" id="greeting-name"></span>!</h1>
-    <p>We've received your warranty registration. Our team will manually review your submission within 24 hours.</p>
+    <p class="success-lead">Your warranty registration has been submitted for review.</p>
 
-    <!-- Review status -->
-    <div class="confirm-box">
-      <div class="confirm-label">What happens next</div>
-      <div class="confirm-row">
-        <div class="confirm-dot">
-          <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#3B6D11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <span class="confirm-text">Your registration is pending manual review.</span>
-      </div>
-      <div class="confirm-row">
-        <div class="confirm-dot">
-          <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#3B6D11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <span class="confirm-text">If approved, we'll send a warranty confirmation email from <strong>support@wardrainsun.com</strong> within 24 hours.</span>
-      </div>
-      <div class="confirm-row">
-        <div class="confirm-dot">
-          <svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2 2 4-4" stroke="#3B6D11" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <span class="confirm-text">If you don't see it, please check your spam or junk folder.</span>
-      </div>
-      <div class="confirm-email">
-        <span class="confirm-email-label">Confirmation will be sent to</span>
-        <span id="confirm-email">your registered email</span>
-      </div>
+    <div class="status-card">
+      <p>If approved, we'll send your warranty confirmation from <strong>support@wardrainsun.com</strong> within 24 hours.</p>
+      <p class="status-email">
+        <span>Confirmation will be sent to</span>
+        <strong id="confirm-email">your registered email</strong>
+      </p>
+      <p class="status-hint">Don't see it? Check your spam or junk folder.</p>
     </div>
 
-    <!-- Next steps -->
-    <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:0.75rem; margin-top:0;">While you wait:</p>
-    <div class="next-steps">
-
-      <!-- Lucky draw -->
-      <a href="mailto:support@wardrainsun.com?cc=wardrainsun@outlook.com&amp;subject=Lucky%20Draw%20Entry&amp;body=Hello%20Ward%20Rain%26Sun%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20enter%20the%20Lucky%20Draw.%0D%0A%0D%0AName%3A%20%0D%0AAmazon%20Order%20ID%3A%20%0D%0A%0D%0AThank%20you%21" class="next-step-btn">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 7v15"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/>
-          </svg>
-        </div>
-        <div class="step-text">
-          <span class="step-title">Enter Our Lucky Draw</span>
-          <span class="step-desc">Send us a quick email with your name and Amazon Order ID</span>
-        </div>
+    <div class="draw-action">
+      <a href="mailto:support@wardrainsun.com?cc=wardrainsun@outlook.com&amp;subject=Lucky%20Draw%20Entry&amp;body=Hello%20Ward%20Rain%26Sun%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20enter%20the%20Lucky%20Draw.%0D%0A%0D%0AName%3A%20%0D%0AAmazon%20Order%20ID%3A%20%0D%0A%0D%0AThank%20you%21" class="draw-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 7v15"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/>
+        </svg>
+        <span>Enter the Lucky Draw</span>
       </a>
-
-      <!-- Support -->
-      <a href="support.html" class="next-step-btn">
-        <div class="step-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#0C2340" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-          </svg>
-        </div>
-        <div class="step-text">
-          <span class="step-title">Browse our FAQ</span>
-          <span class="step-desc">Care tips, warranty details, and common questions</span>
-        </div>
-      </a>
-
+      <p class="draw-note">Email us your name and Amazon Order ID to enter.</p>
     </div>
 
-    <div class="support-note">
-      <strong>We're here whenever you need us.</strong>
-      Ward Rain&amp;Sun is committed to supporting you long after your purchase. If you have any questions, email us anytime at
-      <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a>
-      or our backup address,
-      <a href="mailto:wardrainsun@outlook.com">wardrainsun@outlook.com</a>.
-    </div>
+    <p class="help-line">Ward Rain&amp;Sun is here whenever you need us. <a href="support.html">Browse our FAQ</a> or email <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a> (backup: <a href="mailto:wardrainsun@outlook.com">wardrainsun@outlook.com</a>).</p>
 
     <a href="index.html" class="back-home">← Back to home</a>
   </div>
