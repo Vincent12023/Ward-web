@@ -105,19 +105,6 @@
       max-width: 440px;
       width: 100%;
     }
-    .draw-title {
-      color: var(--navy);
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.3rem;
-      line-height: 1.3;
-      margin: 0 0 0.45rem;
-    }
-    .draw-copy {
-      color: var(--text-mid);
-      font-size: 0.86rem;
-      line-height: 1.55;
-      margin: 0 auto 0.75rem;
-    }
     .draw-btn {
       display: inline-flex;
       align-items: center;
@@ -138,6 +125,12 @@
       transform: translateY(-1px);
     }
     .draw-btn svg { width: 18px; height: 18px; }
+    .draw-note {
+      color: var(--text-muted);
+      font-size: 0.77rem;
+      margin: 0.45rem 0 0;
+    }
+
     .help-line {
       color: var(--text-muted);
       font-size: 0.8rem;
@@ -194,14 +187,13 @@
     </div>
 
     <div class="draw-action">
-      <h2 class="draw-title">🎁 Enter for a Chance to Win Up to $100</h2>
-      <p class="draw-copy">Grand prize: a $100 Amazon Gift Card. Other prizes may include a new Ward Rain&amp;Sun umbrella and more.</p>
-      <a id="drawEntryLink" href="mailto:support@wardrainsun.com?cc=wardrainsun@outlook.com&amp;subject=Lucky%20Draw%20Entry&amp;body=Hello%20Ward%20Rain%26Sun%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20enter%20the%20Lucky%20Draw.%0D%0A%0D%0AEmail%3A%20%0D%0AAmazon%20Order%20ID%3A%20%0D%0A%0D%0AThank%20you%21" class="draw-btn">
+      <a href="mailto:support@wardrainsun.com?cc=wardrainsun@outlook.com&amp;subject=Lucky%20Draw%20Entry&amp;body=Hello%20Ward%20Rain%26Sun%20team%2C%0D%0A%0D%0AI%27d%20like%20to%20enter%20the%20Lucky%20Draw.%0D%0A%0D%0AName%3A%20%0D%0AAmazon%20Order%20ID%3A%20%0D%0A%0D%0AThank%20you%21" class="draw-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 7v15"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/>
         </svg>
-        <span>Open Email to Enter</span>
+        <span>Enter the Lucky Draw</span>
       </a>
+      <p class="draw-note">Email us your name and Amazon Order ID to enter.</p>
     </div>
 
     <p class="help-line">Ward Rain&amp;Sun is here whenever you need us. <a href="support.html">Browse our FAQ</a> or email <a href="mailto:support@wardrainsun.com?subject=Warranty%20Registration%20Follow-up">support@wardrainsun.com</a> (backup: <a href="mailto:wardrainsun@outlook.com?subject=Warranty%20Registration%20Follow-up">wardrainsun@outlook.com</a>).</p>
@@ -210,50 +202,16 @@
   </div>
 
   <script>
-    const STORAGE_KEY = 'wardWarrantySubmission';
-    let submission = {};
-
-    try {
-      const storedSubmission = sessionStorage.getItem(STORAGE_KEY);
-      if (storedSubmission) submission = JSON.parse(storedSubmission);
-    } catch (storageError) {
-      console.warn('Could not read submitted warranty details:', storageError);
-    }
-
-    const firstName = typeof submission.firstName === 'string'
-      ? submission.firstName.trim()
-      : '';
-    const email = typeof submission.email === 'string'
-      ? submission.email.trim()
-      : '';
-    const orderId = typeof submission.orderId === 'string'
-      ? submission.orderId.trim()
-      : '';
-
-    if (firstName) {
-      document.getElementById('greeting-name').textContent = ', ' + firstName;
+    // Pull name and email from URL params set by the form
+    const params = new URLSearchParams(window.location.search);
+    const name  = params.get('name');
+    const email = params.get('email');
+    if (name) {
+      document.getElementById('greeting-name').textContent = ', ' + name;
     }
     if (email) {
       document.getElementById('confirm-email').textContent = email;
     }
-
-    const emailBody = [
-      'Hello Ward Rain&Sun team,',
-      '',
-      "I'd like to enter the Lucky Draw.",
-      '',
-      ...(firstName ? [`Name: ${firstName}`] : []),
-      `Email: ${email}`,
-      `Amazon Order ID: ${orderId}`,
-      '',
-      'Thank you!'
-    ].join('\r\n');
-
-    document.getElementById('drawEntryLink').href =
-      'mailto:support@wardrainsun.com' +
-      `?cc=${encodeURIComponent('wardrainsun@outlook.com')}` +
-      `&subject=${encodeURIComponent('Lucky Draw Entry')}` +
-      `&body=${encodeURIComponent(emailBody)}`;
   </script>
 </body>
 </html>

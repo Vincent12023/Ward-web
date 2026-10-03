@@ -1138,12 +1138,19 @@
 
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
-        // Success → redirect with personalisation params
-        const params = new URLSearchParams({
-          name: firstName,
-          email: email
-        });
-        window.location.href = `/warranty-success?${params.toString()}`;
+        // Keep submitted details in this tab for the success page. This avoids
+        // exposing personal information in the URL or browser history.
+        try {
+          sessionStorage.setItem('wardWarrantySubmission', JSON.stringify({
+            firstName,
+            email,
+            orderId
+          }));
+        } catch (storageError) {
+          console.warn('Could not save warranty details for the success page:', storageError);
+        }
+
+        window.location.href = '/warranty-success';
 
       } catch (err) {
         console.error('Submission error:', err);
