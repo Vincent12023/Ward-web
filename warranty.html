@@ -13,8 +13,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activate Your Warranty — Ward Rain&amp;Sun</title>
-  <meta name="description" content="Register your Ward Rain&Sun umbrella for lifetime warranty coverage. Takes less than 1 minute." />
+  <title>Register Your Lifetime Warranty — Ward Rain&amp;Sun</title>
+  <meta name="description" content="Register your Ward Rain&Sun umbrella warranty online or by email. Submissions are reviewed within 24 hours." />
   <meta name="robots" content="noindex" />
 
   <!-- Fonts -->
@@ -29,6 +29,7 @@
     :root {
       --navy:   #0C2340;
       --gold:   #C9A96E;
+      --gold-dark: #A8823E;
       --gold-light: #DFC08A;
       --cream:  #F5F0E8;
       --slate:  #4A6080;
@@ -37,8 +38,6 @@
       --error:  #C0392B;
       --error-bg: #FDF0EE;
       --success: #2E7D5E;
-      --warning: #A0622A;
-      --warning-bg: #FDF6EE;
       --radius: 10px;
       --shadow: 0 4px 24px rgba(12,35,64,0.10);
       --shadow-lg: 0 8px 40px rgba(12,35,64,0.16);
@@ -275,23 +274,6 @@
     }
 
     /* ─── Form Styles ────────────────────────────────────── */
-    .form-section-title {
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--slate-light);
-      margin-bottom: 16px;
-      padding-bottom: 8px;
-      border-bottom: 1px dashed rgba(12,35,64,0.08);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
     .form-group {
       margin-bottom: 18px;
       position: relative;
@@ -387,28 +369,140 @@
 
     .field-error.visible { display: flex; }
 
-    /* ─── Warning Banner (30-day) ────────────────────────── */
-    .date-warning {
-      display: none;
-      background: var(--warning-bg);
-      border: 1px solid rgba(160,98,42,0.25);
+    /* ─── Email Registration Option ──────────────────────── */
+    .email-option {
+      background: var(--cream);
+      border: 1px solid rgba(201,169,110,0.35);
       border-radius: var(--radius);
-      padding: 12px 14px;
-      margin-top: 8px;
-      font-size: 0.78rem;
-      color: var(--warning);
-      line-height: 1.5;
+      margin-bottom: 22px;
+      padding: 18px;
+      text-align: center;
     }
 
-    .date-warning.visible { display: block; }
+    .email-option-icon {
+      font-size: 1.35rem;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
 
-    .date-warning strong { font-weight: 500; }
+    .email-option-title {
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
 
-    /* ─── Divider ─────────────────────────────────────────── */
-    .form-divider {
+    .email-option-text {
+      color: var(--slate);
+      font-size: 0.8rem;
+      line-height: 1.55;
+      margin: 0 auto;
+      max-width: 390px;
+    }
+
+    .email-option-text strong { color: var(--navy); }
+
+    .email-option-btn {
+      align-items: center;
+      background: var(--white);
+      border: 1px solid rgba(12,35,64,0.16);
+      border-radius: var(--radius);
+      color: var(--navy);
+      display: inline-flex;
+      font-size: 0.82rem;
+      font-weight: 500;
+      gap: 7px;
+      justify-content: center;
+      margin-top: 12px;
+      padding: 9px 16px;
+      text-decoration: none;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .email-option-btn:hover {
+      border-color: var(--gold);
+      transform: translateY(-1px);
+    }
+
+    .email-option-note {
+      color: var(--slate-light);
+      font-size: 0.68rem;
+      margin-top: 8px;
+    }
+
+    .choice-divider {
+      align-items: center;
+      color: var(--slate-light);
+      display: flex;
+      font-size: 0.68rem;
+      gap: 10px;
+      letter-spacing: 0.08em;
+      margin: 0 0 22px;
+      text-transform: uppercase;
+    }
+
+    .choice-divider::before,
+    .choice-divider::after {
+      background: rgba(12,35,64,0.09);
+      content: '';
+      flex: 1;
       height: 1px;
-      background: rgba(12,35,64,0.07);
-      margin: 20px 0 24px;
+    }
+
+    /* ─── Optional Details ───────────────────────────────── */
+    .optional-details {
+      border: 1px solid rgba(12,35,64,0.1);
+      border-radius: var(--radius);
+      margin: 2px 0 20px;
+      overflow: hidden;
+    }
+
+    .optional-details summary {
+      color: var(--navy);
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      list-style: none;
+      padding: 12px 42px 12px 14px;
+      position: relative;
+      text-align: left;
+    }
+
+    .optional-details summary::-webkit-details-marker { display: none; }
+
+    .optional-details summary::after {
+      color: var(--gold-dark);
+      content: '+';
+      font-size: 1.1rem;
+      font-weight: 400;
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .optional-details[open] summary {
+      border-bottom: 1px solid rgba(12,35,64,0.08);
+    }
+
+    .optional-details[open] summary::after { content: '−'; }
+
+    .optional-summary-note {
+      color: var(--slate-light);
+      display: block;
+      font-size: 0.68rem;
+      font-weight: 300;
+      margin-top: 2px;
+    }
+
+    .optional-fields { padding: 16px 14px 0; }
+
+    .submit-hint {
+      color: var(--slate);
+      font-size: 0.72rem;
+      margin-top: 9px;
+      text-align: center;
     }
 
     /* ─── Submit Button ───────────────────────────────────── */
@@ -509,12 +603,6 @@
       line-height: 1.6;
     }
 
-    .form-footer a {
-      color: var(--slate);
-      text-decoration: underline;
-      text-decoration-color: rgba(74,96,128,0.3);
-    }
-
     /* ─── Security Note ───────────────────────────────────── */
     .security-note {
       display: flex;
@@ -524,6 +612,25 @@
       margin-top: 14px;
       font-size: 0.7rem;
       color: var(--slate-light);
+    }
+
+    .support-promise {
+      background: rgba(12,35,64,0.04);
+      border-radius: var(--radius);
+      color: var(--slate);
+      font-size: 0.76rem;
+      line-height: 1.55;
+      margin-top: 18px;
+      padding: 11px 14px;
+      text-align: center;
+    }
+
+    .support-promise strong { color: var(--navy); }
+    .support-promise a {
+      color: var(--gold-dark);
+      font-weight: 500;
+      overflow-wrap: anywhere;
+      text-decoration: none;
     }
 
     /* ─── Page Footer ─────────────────────────────────────── */
@@ -605,9 +712,9 @@
 
     /* ─── Responsive ──────────────────────────────────────── */
     @media (max-width: 400px) {
-      .form-row { grid-template-columns: 1fr; }
       .card { padding: 24px 18px; }
       .trust-text { font-size: 0.6rem; }
+      .email-option { padding: 16px 13px; }
     }
   </style>
 </head>
@@ -624,24 +731,24 @@
   <!-- Hero Header -->
   <div class="hero">
     <div class="hero-badge">Warranty Registration</div>
-    <h1>Activate Your<br><em>Lifetime Warranty</em></h1>
-    <p class="hero-sub">Register within 30 days &nbsp;·&nbsp; Takes under 1 minute</p>
+    <h1>Register Your<br><em>Lifetime Warranty</em></h1>
+    <p class="hero-sub">Choose the easiest way to register. We'll review your submission within 24 hours.</p>
 
     <!-- Progress Steps -->
     <div class="steps">
       <div class="step active">
         <div class="step-circle">1</div>
-        <div class="step-label">Register</div>
+        <div class="step-label">Submit</div>
       </div>
       <div class="step-line"></div>
       <div class="step">
         <div class="step-circle">2</div>
-        <div class="step-label">Confirm</div>
+        <div class="step-label">Review</div>
       </div>
       <div class="step-line"></div>
       <div class="step">
         <div class="step-circle">✓</div>
-        <div class="step-label">Protected</div>
+        <div class="step-label">Confirmed</div>
       </div>
     </div>
   </div>
@@ -658,13 +765,13 @@
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item">
-          <div class="trust-icon">📦</div>
-          <div class="trust-text">Free<br>Replacement</div>
+          <div class="trust-icon">🔄</div>
+          <div class="trust-text">Replacement<br>Support</div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item">
-          <div class="trust-icon">⚡</div>
-          <div class="trust-text">Instant<br>Activation</div>
+          <div class="trust-icon">⏱️</div>
+          <div class="trust-text">24-Hour<br>Review</div>
         </div>
         <div class="trust-divider"></div>
         <div class="trust-item">
@@ -673,37 +780,22 @@
         </div>
       </div>
 
+      <!-- Email Registration Option -->
+      <div class="email-option">
+        <div class="email-option-icon" aria-hidden="true">✉️</div>
+        <div class="email-option-title">Prefer to register by email?</div>
+        <p class="email-option-text">Send your <strong>Amazon Order ID</strong> and a <strong>clear product photo</strong> to <strong>support@wardrainsun.com</strong>.</p>
+        <a
+          class="email-option-btn"
+          href="mailto:support@wardrainsun.com?subject=Warranty%20Registration&amp;body=Hello%20Ward%20Rain%26Sun%20Support%2C%0D%0A%0D%0AI%27d%20like%20to%20register%20my%20product%20warranty.%20My%20details%20are%20below%3A%0D%0A%0D%0A1.%20Amazon%20Order%20ID%3A%0D%0A2.%20I%20have%20attached%20a%20clear%20photo%20of%20the%20umbrella.%0D%0A%0D%0AThank%20you%21"
+        >Register by Email <span aria-hidden="true">→</span></a>
+        <div class="email-option-note">Please attach the product photo before sending.</div>
+      </div>
+
+      <div class="choice-divider">or register online</div>
+
       <!-- Form -->
       <form id="warrantyForm" novalidate>
-
-        <!-- Personal Info -->
-        <div class="form-section-title">Your Information</div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="firstName">First Name <span class="req">*</span></label>
-            <input
-              type="text"
-              id="firstName"
-              name="firstName"
-              placeholder="Jane"
-              autocomplete="given-name"
-              required
-            />
-            <div class="field-error" id="firstNameError">⚠ Please enter your first name.</div>
-          </div>
-
-          <div class="form-group">
-            <label for="lastName">Last Name <span class="opt">(optional)</span></label>
-            <input
-              type="text"
-              id="lastName"
-              name="lastName"
-              placeholder="Smith"
-              autocomplete="family-name"
-            />
-          </div>
-        </div>
 
         <div class="form-group">
           <label for="email">Email Address <span class="req">*</span></label>
@@ -719,11 +811,6 @@
           <div class="field-error" id="emailError">⚠ Please enter a valid email address.</div>
         </div>
 
-        <div class="form-divider"></div>
-
-        <!-- Order Info -->
-        <div class="form-section-title">Order Details</div>
-
         <div class="form-group">
           <label for="orderId">Amazon Order ID <span class="req">*</span></label>
           <input
@@ -735,42 +822,6 @@
             required
           />
           <div class="field-error" id="orderIdError">⚠ Please enter your Amazon Order ID.</div>
-        </div>
-
-        <div class="form-group">
-          <label for="productModel">Product Model <span class="req">*</span></label>
-          <div class="select-wrapper">
-            <select id="productModel" name="productModel" required>
-              <option value="" disabled selected>— Select your model —</option>
-              <!-- ✏️ UPDATE: Replace with your actual product models -->
-              <option value="Classic-A">Classic</option>
-              <option value="Premium-C">Premium</option>
-              <option value="Pro-D">Pro</option>
-              <option value="Ultimate-F">Ultimate</option>
-              <option value="Light=H">Light=H</option>
-              <option value="OTHER">Other / Not Listed</option>
-            </select>
-          </div>
-          <div class="field-error" id="productModelError">⚠ Please select your product model.</div>
-        </div>
-
-        <div class="form-group">
-          <label for="purchaseDate">Purchase Date <span class="req">*</span></label>
-          <input
-            type="date"
-            id="purchaseDate"
-            name="purchaseDate"
-            required
-          />
-          <div class="field-error" id="purchaseDateError">⚠ Please select your purchase date.</div>
-
-          <!-- 30-day warning -->
-          <div class="date-warning" id="dateWarning">
-            <strong>⚠ Your purchase was more than 30 days ago.</strong><br>
-            Warranty registration may be limited. Please contact us at
-            <a href="mailto:support@wardrainsun.com" style="color:var(--warning);">support@wardrainsun.com</a>
-            and we'll do our best to help.
-          </div>
         </div>
 
         <!-- Photo Upload -->
@@ -793,12 +844,56 @@
           <div class="field-error" id="photoError">⚠ Please upload a photo of your product.</div>
         </div>
 
+        <details class="optional-details">
+          <summary>
+            Add optional details
+            <span class="optional-summary-note">These details can help us review your registration faster.</span>
+          </summary>
+          <div class="optional-fields">
+            <div class="form-group">
+              <label for="firstName">First Name <span class="opt">(optional)</span></label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="Jane"
+                autocomplete="given-name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="productModel">Product Model <span class="opt">(optional)</span></label>
+              <div class="select-wrapper">
+                <select id="productModel" name="productModel">
+                  <option value="" selected>— Select your model —</option>
+                  <option value="Classic-A">Classic</option>
+                  <option value="Premium-C">Premium</option>
+                  <option value="Pro-D">Pro</option>
+                  <option value="Ultimate-F">Ultimate</option>
+                  <option value="Light=H">Light=H</option>
+                  <option value="OTHER">Other / Not Listed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="purchaseDate">Purchase Date <span class="opt">(optional)</span></label>
+              <input
+                type="date"
+                id="purchaseDate"
+                name="purchaseDate"
+              />
+            </div>
+          </div>
+        </details>
+
         <!-- Submit -->
         <button type="submit" class="btn-submit" id="submitBtn">
           <div class="spinner"></div>
-          <span class="btn-text">Activate My Warranty</span>
+          <span class="btn-text">Submit My Registration</span>
           <span class="btn-arrow">→</span>
         </button>
+        <div class="submit-hint">We'll review your submission and email you within 24 hours.</div>
 
         <!-- Submit Error -->
         <div class="submit-error" id="submitError">
@@ -808,13 +903,16 @@
 
         <!-- Footer -->
         <div class="form-footer">
-          By submitting, you agree to our
-          <a href="/support">Terms &amp; Privacy Policy</a>.
-          We'll never sell your data or send spam.
+          We use your information only to review and support your warranty registration. We never sell your data or send marketing spam.
         </div>
 
         <div class="security-note">
           🔒 Secured &nbsp;·&nbsp; SSL encrypted &nbsp;·&nbsp; Data protected
+        </div>
+
+        <div class="support-promise">
+          <strong>Questions?</strong> Ward Rain&amp;Sun is here to help. Email
+          <a href="mailto:support@wardrainsun.com">support@wardrainsun.com</a> anytime.
         </div>
 
       </form>
@@ -886,15 +984,24 @@
       document.getElementById('uploadPreview').classList.remove('visible');
       document.getElementById('uploadArea').classList.remove('has-file', 'error-state');
       document.getElementById('uploadThumb').src = '';
+      document.getElementById('photoError').classList.remove('visible');
+    }
+
+    function showPhotoError(message) {
+      compressedPhotoBase64 = null;
+      document.getElementById('uploadPreview').classList.remove('visible');
+      document.getElementById('uploadArea').classList.remove('has-file');
+      document.getElementById('uploadArea').classList.add('error-state');
+      document.getElementById('uploadThumb').src = '';
+      document.getElementById('photoError').textContent = message;
+      document.getElementById('photoError').classList.add('visible');
     }
 
     document.getElementById('photoFile').addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (!file) return;
       if (!file.type.startsWith('image/')) {
-        document.getElementById('uploadArea').classList.add('error-state');
-        document.getElementById('photoError').textContent = '⚠ Please upload an image file (JPEG or PNG).';
-        document.getElementById('photoError').classList.add('visible');
+        showPhotoError('⚠ Please upload an image file.');
         return;
       }
       try {
@@ -903,8 +1010,7 @@
         compressedPhotoMime   = 'image/jpeg';
         setPhotoPreview(dataUrl, file.name, file.size);
       } catch {
-        document.getElementById('photoError').textContent = '⚠ Could not process image. Please try another file.';
-        document.getElementById('photoError').classList.add('visible');
+        showPhotoError('⚠ Could not process image. Please try another file.');
       }
     });
 
@@ -920,10 +1026,18 @@
       const file = e.dataTransfer.files[0];
       if (file) {
         document.getElementById('photoFile').value = '';
-        if (!file.type.startsWith('image/')) return;
-        const dataUrl = await compressImage(file);
-        compressedPhotoBase64 = dataUrl;
-        setPhotoPreview(dataUrl, file.name, file.size);
+        if (!file.type.startsWith('image/')) {
+          showPhotoError('⚠ Please upload an image file.');
+          return;
+        }
+        try {
+          const dataUrl = await compressImage(file);
+          compressedPhotoBase64 = dataUrl;
+          compressedPhotoMime   = 'image/jpeg';
+          setPhotoPreview(dataUrl, file.name, file.size);
+        } catch {
+          showPhotoError('⚠ Could not process image. Please try another file.');
+        }
       }
     });
 
@@ -931,22 +1045,7 @@
     const dateInput = document.getElementById('purchaseDate');
     const today = new Date();
     const maxDate = today.toISOString().split('T')[0];
-
-    // Min date: 2 years ago (reasonable lower bound)
-    const minDate = new Date(today);
-    minDate.setFullYear(minDate.getFullYear() - 2);
     dateInput.max = maxDate;
-    dateInput.min = minDate.toISOString().split('T')[0];
-
-    // ─── 30-Day Warning ─────────────────────────────────────
-    dateInput.addEventListener('change', () => {
-      const warning = document.getElementById('dateWarning');
-      if (!dateInput.value) { warning.classList.remove('visible'); return; }
-
-      const purchased = new Date(dateInput.value);
-      const diffDays = Math.floor((today - purchased) / (1000 * 60 * 60 * 24));
-      warning.classList.toggle('visible', diffDays > 30);
-    });
 
     // ─── Field Validation ────────────────────────────────────
     function validateField(id, condition, errorId) {
@@ -970,11 +1069,6 @@
     }
 
     // Live validation on blur
-    document.getElementById('firstName').addEventListener('blur', () => {
-      const v = document.getElementById('firstName').value.trim();
-      validateField('firstName', v.length > 0, 'firstNameError');
-    });
-
     document.getElementById('email').addEventListener('blur', () => {
       const v = document.getElementById('email').value.trim();
       validateField('email', isValidEmail(v), 'emailError');
@@ -985,22 +1079,12 @@
       validateField('orderId', v.length > 0, 'orderIdError');
     });
 
-    document.getElementById('productModel').addEventListener('change', () => {
-      const v = document.getElementById('productModel').value;
-      validateField('productModel', v !== '', 'productModelError');
-    });
-
-    document.getElementById('purchaseDate').addEventListener('change', () => {
-      const v = document.getElementById('purchaseDate').value;
-      validateField('purchaseDate', v !== '', 'purchaseDateError');
-    });
-
     // ─── Form Submit ────────────────────────────────────────
     document.getElementById('warrantyForm').addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const firstName    = document.getElementById('firstName').value.trim();
-      const lastName     = document.getElementById('lastName').value.trim();
+      const lastName     = '';
       const email        = document.getElementById('email').value.trim();
       const orderId      = document.getElementById('orderId').value.trim();
       const productModel = document.getElementById('productModel').value;
@@ -1008,23 +1092,19 @@
 
       // Full validation
       let valid = true;
-      if (!validateField('firstName', firstName.length > 0, 'firstNameError')) valid = false;
       if (!validateField('email', isValidEmail(email), 'emailError')) valid = false;
       if (!validateField('orderId', orderId.length > 0, 'orderIdError')) valid = false;
-      if (!validateField('productModel', productModel !== '', 'productModelError')) valid = false;
-      if (!validateField('purchaseDate', purchaseDate !== '', 'purchaseDateError')) valid = false;
 
       // Photo validation
       if (!compressedPhotoBase64) {
-        document.getElementById('uploadArea').classList.add('error-state');
-        document.getElementById('photoError').textContent = '⚠ Please upload a photo of your product.';
-        document.getElementById('photoError').classList.add('visible');
+        showPhotoError('⚠ Please upload a photo of your product.');
         valid = false;
       }
 
       if (!valid) {
         // Scroll to first error
-        document.querySelector('.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.querySelector('input.error, select.error, .upload-area.error-state')
+          ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
