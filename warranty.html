@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register Your Lifetime Warranty — Ward Rain&amp;Sun</title>
-  <meta name="description" content="Register your Ward Rain&Sun umbrella warranty online or by email. Submissions are reviewed within 24 hours." />
+  <meta name="description" content="Register your Ward Rain&Sun umbrella lifetime warranty online. Have your email, Amazon Order ID, and a clear product photo ready." />
   <meta name="robots" content="noindex" />
 
   <!-- Fonts -->
@@ -86,7 +86,7 @@
     /* ─── Hero Header ────────────────────────────────────── */
     .hero {
       background: var(--navy);
-      padding: 40px 24px 48px;
+      padding: 30px 24px 48px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -98,6 +98,13 @@
       inset: 0;
       background: radial-gradient(ellipse at 50% 120%, rgba(201,169,110,0.12) 0%, transparent 70%);
       pointer-events: none;
+    }
+
+    .hero-content {
+      margin: 0 auto;
+      max-width: 620px;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-badge {
@@ -113,7 +120,7 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .hero-badge::before {
@@ -147,76 +154,89 @@
 
     .hero-sub {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.72);
       font-weight: 300;
       letter-spacing: 0.02em;
+      line-height: 1.55;
+      margin: 0 auto;
+      max-width: 460px;
     }
 
-    /* ─── Progress Steps ────────────────────────────────── */
-    .steps {
+    .hero-requirements {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      list-style: none;
+      margin: 18px auto 0;
+      max-width: 560px;
+    }
+
+    .hero-requirements li {
+      align-items: center;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,0.92);
       display: flex;
+      font-size: 0.76rem;
+      gap: 8px;
       justify-content: center;
-      align-items: center;
-      gap: 0;
-      padding: 0 24px;
-      margin-top: 32px;
+      min-height: 42px;
+      padding: 8px 10px;
     }
 
-    .step {
-      display: flex;
-      flex-direction: column;
+    .requirement-check {
       align-items: center;
-      gap: 5px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step-circle {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 500;
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,0.5);
-      border: 1.5px solid rgba(255,255,255,0.15);
-      transition: var(--transition);
-    }
-
-    .step.active .step-circle {
       background: var(--gold);
+      border-radius: 50%;
       color: var(--navy);
-      border-color: var(--gold);
+      display: inline-flex;
+      flex: 0 0 18px;
+      font-size: 0.68rem;
       font-weight: 700;
+      height: 18px;
+      justify-content: center;
+      width: 18px;
     }
 
-    .step.done .step-circle {
-      background: rgba(201,169,110,0.2);
-      color: var(--gold);
-      border-color: rgba(201,169,110,0.4);
+    .hero-cta {
+      align-items: center;
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      color: var(--navy);
+      display: inline-flex;
+      font-size: 0.86rem;
+      font-weight: 600;
+      gap: 9px;
+      justify-content: center;
+      margin-top: 18px;
+      min-height: 46px;
+      padding: 11px 20px;
+      text-decoration: none;
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
     }
 
-    .step-label {
-      font-size: 0.65rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      white-space: nowrap;
+    .hero-cta:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-1px);
     }
 
-    .step.active .step-label { color: var(--gold); }
+    .hero-cta:focus-visible,
+    .email-option-btn:focus-visible,
+    .btn-submit:focus-visible,
+    .optional-details summary:focus-visible,
+    .upload-remove:focus-visible {
+      outline: 3px solid rgba(201,169,110,0.45);
+      outline-offset: 3px;
+    }
 
-    .step-line {
-      flex: 1;
-      height: 1px;
-      background: rgba(255,255,255,0.12);
-      margin: 0 8px;
-      margin-bottom: 20px;
-      max-width: 60px;
+    .hero-review {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.7rem;
+      line-height: 1.45;
+      margin-top: 10px;
     }
 
     /* ─── Main Card ─────────────────────────────────────── */
@@ -233,44 +253,26 @@
       margin-top: -20px;
       padding: 32px 28px;
       position: relative;
+      scroll-margin-top: 20px;
     }
 
-    /* ─── Trust Strip ────────────────────────────────────── */
-    .trust-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      border-bottom: 1px solid rgba(12,35,64,0.07);
-      margin-bottom: 28px;
-      gap: 4px;
-    }
-
-    .trust-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
-      flex: 1;
-    }
-
-    .trust-icon {
-      font-size: 1.1rem;
-    }
-
-    .trust-text {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--slate);
+    .form-heading {
+      margin-bottom: 24px;
       text-align: center;
-      letter-spacing: 0.02em;
-      line-height: 1.3;
     }
 
-    .trust-divider {
-      width: 1px;
-      height: 28px;
-      background: rgba(12,35,64,0.08);
+    .form-heading h2 {
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .form-heading p {
+      color: var(--slate-light);
+      font-size: 0.76rem;
+      line-height: 1.5;
     }
 
     /* ─── Form Styles ────────────────────────────────────── */
@@ -369,12 +371,19 @@
 
     .field-error.visible { display: flex; }
 
+    .field-help {
+      color: var(--slate-light);
+      font-size: 0.7rem;
+      line-height: 1.45;
+      margin-top: 6px;
+    }
+
     /* ─── Email Registration Option ──────────────────────── */
     .email-option {
       background: var(--cream);
       border: 1px solid rgba(201,169,110,0.35);
       border-radius: var(--radius);
-      margin-bottom: 22px;
+      margin-top: 28px;
       padding: 18px;
       text-align: center;
     }
@@ -429,25 +438,6 @@
       color: var(--slate-light);
       font-size: 0.68rem;
       margin-top: 8px;
-    }
-
-    .choice-divider {
-      align-items: center;
-      color: var(--slate-light);
-      display: flex;
-      font-size: 0.68rem;
-      gap: 10px;
-      letter-spacing: 0.08em;
-      margin: 0 0 22px;
-      text-transform: uppercase;
-    }
-
-    .choice-divider::before,
-    .choice-divider::after {
-      background: rgba(12,35,64,0.09);
-      content: '';
-      flex: 1;
-      height: 1px;
     }
 
     /* ─── Optional Details ───────────────────────────────── */
@@ -711,9 +701,22 @@
     .upload-remove:hover { color: var(--error); }
 
     /* ─── Responsive ──────────────────────────────────────── */
+    @media (max-width: 520px) {
+      .hero { padding: 24px 18px 42px; }
+      .hero-requirements {
+        gap: 6px;
+        grid-template-columns: 1fr;
+        max-width: 285px;
+      }
+      .hero-requirements li {
+        justify-content: flex-start;
+        min-height: 34px;
+        padding: 6px 10px;
+      }
+    }
+
     @media (max-width: 400px) {
       .card { padding: 24px 18px; }
-      .trust-text { font-size: 0.6rem; }
       .email-option { padding: 16px 13px; }
     }
   </style>
@@ -730,69 +733,30 @@
 
   <!-- Hero Header -->
   <div class="hero">
-    <div class="hero-badge">Warranty Registration</div>
-    <h1>Register Your<br><em>Lifetime Warranty</em></h1>
-    <p class="hero-sub">Choose the easiest way to register. We'll review your submission within 24 hours.</p>
+    <div class="hero-content">
+      <div class="hero-badge">Warranty Registration</div>
+      <h1>Register Your<br><em>Lifetime Warranty</em></h1>
+      <p class="hero-sub">Register online in about 1 minute. Have these 3 things ready:</p>
 
-    <!-- Progress Steps -->
-    <div class="steps">
-      <div class="step active">
-        <div class="step-circle">1</div>
-        <div class="step-label">Submit</div>
-      </div>
-      <div class="step-line"></div>
-      <div class="step">
-        <div class="step-circle">2</div>
-        <div class="step-label">Review</div>
-      </div>
-      <div class="step-line"></div>
-      <div class="step">
-        <div class="step-circle">✓</div>
-        <div class="step-label">Confirmed</div>
-      </div>
+      <ul class="hero-requirements" aria-label="What you need to register">
+        <li><span class="requirement-check" aria-hidden="true">✓</span>Email address</li>
+        <li><span class="requirement-check" aria-hidden="true">✓</span>Amazon Order ID</li>
+        <li><span class="requirement-check" aria-hidden="true">✓</span>One clear product photo</li>
+      </ul>
+
+      <a class="hero-cta" href="#online-registration">Start Online Registration <span aria-hidden="true">↓</span></a>
+      <p class="hero-review">We'll review your submission and email you within 1–2 business days.</p>
     </div>
   </div>
 
   <!-- Main Content -->
   <div class="main">
-    <div class="card">
+    <div class="card" id="online-registration">
 
-      <!-- Trust Strip -->
-      <div class="trust-strip">
-        <div class="trust-item">
-          <div class="trust-icon">🛡️</div>
-          <div class="trust-text">Lifetime<br>Warranty</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">🔄</div>
-          <div class="trust-text">Replacement<br>Support</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">⏱️</div>
-          <div class="trust-text">24-Hour<br>Review</div>
-        </div>
-        <div class="trust-divider"></div>
-        <div class="trust-item">
-          <div class="trust-icon">🔒</div>
-          <div class="trust-text">Private &amp;<br>Secure</div>
-        </div>
+      <div class="form-heading">
+        <h2>Register online</h2>
+        <p>Complete the three required fields below. Fields marked <span class="req">*</span> are required.</p>
       </div>
-
-      <!-- Email Registration Option -->
-      <div class="email-option">
-        <div class="email-option-icon" aria-hidden="true">✉️</div>
-        <div class="email-option-title">Prefer to register by email?</div>
-        <p class="email-option-text">Send your <strong>Amazon Order ID</strong> and a <strong>clear product photo</strong> to <strong>support@wardrainsun.com</strong>.</p>
-        <a
-          class="email-option-btn"
-          href="mailto:support@wardrainsun.com?subject=Warranty%20Registration&amp;body=Hello%20Ward%20Rain%26Sun%20Support%2C%0D%0A%0D%0AI%27d%20like%20to%20register%20my%20product%20warranty.%20My%20details%20are%20below%3A%0D%0A%0D%0A1.%20Amazon%20Order%20ID%3A%0D%0A2.%20I%20have%20attached%20a%20clear%20photo%20of%20the%20umbrella.%0D%0A%0D%0AThank%20you%21"
-        >Register by Email <span aria-hidden="true">→</span></a>
-        <div class="email-option-note">Please attach the product photo before sending.</div>
-      </div>
-
-      <div class="choice-divider">or register online</div>
 
       <!-- Form -->
       <form id="warrantyForm" novalidate>
@@ -821,6 +785,7 @@
             autocomplete="off"
             required
           />
+          <div class="field-help">Find this in Your Orders on Amazon. Example: 114-1234567-8901234.</div>
           <div class="field-error" id="orderIdError">⚠ Please enter your Amazon Order ID.</div>
         </div>
 
@@ -831,7 +796,7 @@
             <input type="file" id="photoFile" name="photoFile" accept="image/*" />
             <span class="upload-icon">📷</span>
             <span class="upload-label">Tap to take / upload a photo</span>
-            <span class="upload-hint">Clear photo of your umbrella · JPEG or PNG · Auto-compressed</span>
+            <span class="upload-hint">One clear photo of your umbrella · JPEG or PNG · Auto-compressed</span>
           </div>
           <div class="upload-preview" id="uploadPreview">
             <img class="upload-thumb" id="uploadThumb" src="" alt="Preview" />
@@ -893,7 +858,7 @@
           <span class="btn-text">Submit My Registration</span>
           <span class="btn-arrow">→</span>
         </button>
-        <div class="submit-hint">We'll review your submission and email you within 24 hours.</div>
+        <div class="submit-hint">We'll review your submission and email you within 1–2 business days.</div>
 
         <!-- Submit Error -->
         <div class="submit-error" id="submitError">
@@ -916,6 +881,18 @@
         </div>
 
       </form>
+
+      <!-- Email Registration Option -->
+      <div class="email-option">
+        <div class="email-option-icon" aria-hidden="true">✉️</div>
+        <div class="email-option-title">Prefer to register by email?</div>
+        <p class="email-option-text">Send your <strong>Amazon Order ID</strong> and a <strong>clear product photo</strong> to <strong>support@wardrainsun.com</strong>.</p>
+        <a
+          class="email-option-btn"
+          href="mailto:support@wardrainsun.com?subject=Warranty%20Registration&amp;body=Hello%20Ward%20Rain%26Sun%20Support%2C%0D%0A%0D%0AI%27d%20like%20to%20register%20my%20product%20warranty.%20My%20details%20are%20below%3A%0D%0A%0D%0A1.%20Amazon%20Order%20ID%3A%0D%0A2.%20I%20have%20attached%20a%20clear%20photo%20of%20the%20umbrella.%0D%0A%0D%0AThank%20you%21"
+        >Register by Email <span aria-hidden="true">→</span></a>
+        <div class="email-option-note">Please attach the product photo before sending.</div>
+      </div>
     </div><!-- /card -->
   </div><!-- /main -->
 
